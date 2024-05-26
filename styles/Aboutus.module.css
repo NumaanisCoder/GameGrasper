@@ -1,0 +1,41 @@
+.rootkabaap{
+    margin-top: 20px;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rootkabaap.dark{
+    background-color: black;
+    color: white;
+}
+
+.root{
+    padding: 10px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.root > p{
+    color: black;
+    text-align: center;
+    margin: 14px auto;
+    width: 70rem;
+    margin-top: 30px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+
+@media (max-width: 500px) {
+    .root{
+        margin: 10vh auto;
+    }
+    .root > p{
+        font-size: 15px;
+        line-height: 25px;
+        width: 92%;
+    }
+}

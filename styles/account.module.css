@@ -1,0 +1,124 @@
+.root{
+    min-height: 80vh;
+    display: flex;
+    gap: 14px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Ubuntu", sans-serif;
+    width: 100%;
+}
+
+.form{
+    margin-top: 20px;
+    color: white;
+    padding: 15px 25px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    clip-path: circle(10% at 0% 0%);
+    transition: clip-path 3s linear;
+    clip-path: stroke-box;
+    border-radius: 10px;
+    width: 30rem;
+}
+
+
+.formGroup{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.formGroup > h1{
+    text-align: center;
+}
+.formGroup > label{
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.formGroup > input{
+    width: 80%;
+    border-radius: 6px;
+    outline: 0;
+    border: none;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+.formGroup > a{
+    padding: 0px 0px;
+    color: rgb(130, 3, 3);
+}
+.formGroup > button{
+    text-transform: capitalize;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-weight: 600;
+    background-color: #f2f2f2;
+    color: black;
+}
+
+.navD{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.navD > button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    padding: 4px 6px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+}
+
+.navD > button > img{
+    width: 25px;
+}
+
+.navD > a{
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    padding: 8px 12px;
+    box-shadow: 1px 1px 4px black;
+}
+
+/* .emailFormGroup{
+    flex-direction: row;
+    gap: 0;
+    border-radius: 5px;
+}
+.emailFormGroup > input{
+    width: 75%;
+}
+.emailFormGroup > button{
+    height: 35px;
+    width: 25%;
+    padding: 4px;
+    border-radius: 0;
+} */
+
+
+@media (max-width: 600px) {
+
+    .form{
+        width: 20rem;
+    }
+    .formGroup > input{
+        width: 95%;
+    }
+    
+}

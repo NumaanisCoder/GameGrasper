@@ -1,0 +1,124 @@
+.root{
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: 10px;
+    transition: all 1ms linear;
+}
+.root.dark{
+    background-color: black;
+    color: white;
+}
+
+.root > form{
+    margin-top: 80px;
+    width: 60%;
+}
+.dark > form > .formGroup > textarea, .dark > form > .formGroup > input, .dark > form > .formGroup > select{
+    background-color: black;
+    color: white;
+}
+
+.root > details{
+    margin-top: 70px;
+    width: 50%;
+}
+
+.div2{
+    margin-top: 60px;
+}
+.allblogcontainer{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.formGroup.darkFG > input,.formGroup.darkFG > textarea,.formGroup.darkFG > select{
+
+    background-color: black;
+    color: white;
+}
+.formGroup2{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.formGroup2{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.formLabel{
+    font-weight: 600;
+}
+
+.submitButton{
+    box-sizing: border-box;
+    width: fit-content;
+    background-color: black;
+    color: white;
+    font-size: larger;
+    padding: 6px 8px;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: all 300ms linear;
+}
+.submitButton:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.urlimage{
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+}
+.submitButton2{
+    padding: 6px 8px;
+    width: fit-content;
+    background-color: black;
+    color: white;
+    border: none;
+}
+.submitButton2:hover{
+    cursor: pointer;
+    opacity: .9;
+}
+
+
+@keyframes marqueeAnimation {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .marqueediv{
+    background-color: black;
+    color: white;
+  }
+
+  .marquee {
+    overflow: hidden;
+    font-size: large;
+    animation: marqueeAnimation 20s linear infinite;
+  }
+  
+
+  @media (max-width: 500px) {
+
+    .root > details{
+        width: 90%;
+    }
+    .root > form{
+        margin-top: 80px;
+        width: 90%;
+    }
+  }

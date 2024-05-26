@@ -1,0 +1,139 @@
+/* styles/homeStyle.module.css */
+
+/* Mobile styles */
+.parent {
+  width: 100%;
+  height: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dark{
+  background-color: black;
+  color: white;
+}
+
+.blogcontainer {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+  width: 100%;
+  
+}
+
+.categoryListContainer {
+  margin-top: 75px;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.categoryListContainer::-webkit-scrollbar {
+  width: 0;
+}
+
+.categoryContent {
+  display: inline-block;
+  white-space: nowrap;
+  /* prevent wrapping */
+}
+
+.categoryContent>a {
+  box-sizing: border-box;
+  display: inline-block;
+  margin-left: 5px;
+  font-weight: 600;
+  border: 3px outset black;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 6px 10px;
+  margin-right: 5px;
+  font-size: 14px;
+  transition: all .4s linear;
+
+}
+
+.darkCLC > .categoryContent > a{
+
+  color: white;
+
+}
+
+.Banner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  margin-top: 70px;
+  background-color: #42F2F7;
+  height: 200px;
+  width: 100%;
+  
+}
+
+
+.leftB{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+}
+
+.bHead{
+  display: block;
+    font-size: 40px;
+  }
+  .bpara{
+    font-size: 15px;
+  }
+  .bButton{
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    width: fit-content;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: none;
+    
+  }
+
+
+@media (min-width: 750px) and (max-width: 1280px) {
+  .blogcontainer {
+   
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* Tablet and larger screens */
+@media (min-width: 1300px)  {
+  .blogcontainer {
+   margin-top: 100px;
+    align-items: center;
+  }
+
+  .categoryListContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .categoryContent>a {
+    font-size: larger;
+  }
+
+}
+
+/* Desktop and larger screens */
+@media (min-width: 1504px) {
+  .blogcontainer {
+    margin-top: 80px;
+  }
+}

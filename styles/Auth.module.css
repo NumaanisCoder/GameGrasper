@@ -1,0 +1,27 @@
+.root{
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.auth{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.formGroup > button{
+    width: fit-content;
+    padding: 8px 10px ;
+    border-radius: 6px;
+    border: none;
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,21 @@
+.root{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 5px;
+    padding: 7px;
+    background: #f2f2f2;
+    width: max-content;
+    border-radius: 10px;
+}
+
+.root > p{
+    font-weight: 600;
+    color: black;
+}
+
+.root > p > span{
+    text-transform: capitalize;
+    font-weight: 500;
+    color: black;
+}

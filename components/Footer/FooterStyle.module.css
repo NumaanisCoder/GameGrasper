@@ -1,0 +1,63 @@
+.root{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #f2f2f2;
+    color: black;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.company{
+    width: 40%;
+}
+
+.goTo{
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+.companyName{
+    font-family: 'AvengersFont';
+    font-weight: 200;
+    color: black;
+    font-size: xx-large;
+    border-bottom: 5px solid black;
+}
+.LinkContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.link:hover{
+    color: black;
+    font-weight: 600;
+    background-color: white;
+}
+.links{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.links > a{
+    padding: 3px 2px;
+}
+@media (max-width:500px) {
+    .root{
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+    .company{
+        width: 100%;
+    }
+    .companyDescription{
+        width: 100%;
+    }
+    .goTo{
+        width: 100%;
+    }
+    
+    .links{
+        gap: 4px;
+    }
+}
