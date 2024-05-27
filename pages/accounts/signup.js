@@ -27,30 +27,17 @@ signInWithPopup(auth, provider)
     const token = credential.accessToken;
     const user = result.user;
 
-    const data  = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/GoogleAuth/Sign`,user);
-    if(data.data.success){
-      router.push(localStorage.getItem("PreviousPath"));
-    }
+   await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/GoogleAuth/Sign`,user);
+    router.back();
   }).catch((error) => {
     // Handle Errors here.
     console.log(error);
     // ...
   });
-  
+  router.back();
   }
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyBPv7Si1aJboM9FilIG-XKoxz0yKpNnnmA",
-    authDomain: "studymania-bece4.firebaseapp.com",
-    databaseURL: "https://studymania-bece4-default-rtdb.firebaseio.com",
-    projectId: "studymania-bece4",
-    storageBucket: "studymania-bece4.appspot.com",
-    messagingSenderId: "605803392646",
-    appId: "1:605803392646:web:d903a9cec11f65f56fab07",
-    measurementId: "G-5NJ8PXRPDC"
-  };
 
-  const app = initializeApp(firebaseConfig);
 
 
 

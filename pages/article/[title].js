@@ -110,24 +110,7 @@ const Blog = (props) => {
         <meta name="twitter:card" content={summary} />
       </Head>
 
-      {/* <nav
-        className={`${style.backLinksC} ${
-          isDarkMode ? style.backLinksCDark : ""
-        }`}
-      >
-        <ThemeButton />
-        <Link href={`/Programming`}>Programming</Link>
-        <Link href={`/Video-Games`}>Video Games</Link>
-        <Link href={`/News`}>News</Link>
-        <Link href={`/Football`}>Football</Link>
-        <Link href={`/Tutorial`}>Tutorial</Link>
-        <Link href={`/Gadget-Reviews`}>Gadget Reviews</Link>
-        <Link href={`/Technology`}>Technology</Link>
-        <Link href={`/Anime`}>Anime</Link>
-        <Link href={`/Education`}>Education</Link>
-        <Link href={`/Blogging`}>Blogging</Link>
-      </nav> */}
-
+    
       {/* Blog Content */}
       <main className={`${style.parent} ${isDarkMode ? style.darkp : ""}`}>
         <div className={style.metaInfo}>

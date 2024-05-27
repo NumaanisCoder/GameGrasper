@@ -4,13 +4,17 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Cookies from "js-cookie";
-import { initializeApp } from "firebase/app";
+
+
+
+
 import { getAnalytics } from "firebase/analytics";
 
 
 const provider = new GoogleAuthProvider();
 
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { initializeApp } from "firebase/app";
 
 
 const signup = () => {
@@ -21,37 +25,32 @@ const signup = () => {
 signInWithPopup(auth, provider)
   .then(async (result) => {
   
-    // const credential = GoogleAuthProvider.credentialFromResult(result);
-    // const token = credential.accessToken;
-    // The signed-in user info.
     const user = result.user;
-    const data  = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/GoogleAuth/Sign`,user);
-
-    if(data.data.success){
-      router.push(localStorage.getItem("PreviousPath"));
-    }
-    
-    
-
-  }).catch((error) => {
-    // Handle Errors here.
-    console.log(error);
-    // ...
-  });
-
+      try {
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/GoogleAuth/Sign`, user);
+        console.log('API response:', response);
+        router.back();
+      } catch (error) {
+        console.error('API error:', error);
+      }
+    })
+    .catch((error) => {
+      console.error('Sign-in error:', error);
+    });
+router.back();
   }
 
   const firebaseConfig = {
-    apiKey: "AIzaSyBPv7Si1aJboM9FilIG-XKoxz0yKpNnnmA",
-    authDomain: "studymania-bece4.firebaseapp.com",
-    databaseURL: "https://studymania-bece4-default-rtdb.firebaseio.com",
-    projectId: "studymania-bece4",
-    storageBucket: "studymania-bece4.appspot.com",
-    messagingSenderId: "605803392646",
-    appId: "1:605803392646:web:d903a9cec11f65f56fab07",
-    measurementId: "G-5NJ8PXRPDC"
+    apiKey: "AIzaSyCYMZgFyW4i9VPapCOFxpjn-0Apjchf3Wg",
+    authDomain: "gamegrasper-3e636.firebaseapp.com",
+    projectId: "gamegrasper-3e636",
+    storageBucket: "gamegrasper-3e636.appspot.com",
+    messagingSenderId: "828323947217",
+    appId: "1:828323947217:web:edddc89704b65bb87c1bf0",
+    measurementId: "G-3FW4DZY8TX"
   };
-
+  
+  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
 
   const cookieConsentStatus = Cookies.get('cookieConsent');
