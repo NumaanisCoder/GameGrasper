@@ -13,7 +13,7 @@ export default ConnectDb(async (req, res) => {
 
     // Generate dynamic sitemap
     const currentDate = new Date().toISOString();
-    const baseUrl = 'https://www.gamegrasper.app';
+    const baseUrl = 'https://www.gamegrasper.blog';
     const urls = blogs.map(blog => ({
       loc: `${baseUrl}/article/${encodeURIComponent(blog.title.replace(/ /g, '-'))}`,
       lastmod: currentDate,
@@ -29,31 +29,6 @@ export default ConnectDb(async (req, res) => {
         </url>
         <url>
           <loc>${baseUrl}/about-us</loc>
-          <lastmod>${currentDate}</lastmod>
-          <priority>0.7</priority>
-        </url>
-        <url>
-          <loc>${baseUrl}/Video-Games</loc>
-          <lastmod>${currentDate}</lastmod>
-          <priority>0.7</priority>
-        </url>
-        <url>
-          <loc>${baseUrl}/Anime</loc>
-          <lastmod>${currentDate}</lastmod>
-          <priority>0.7</priority>
-        </url>
-        <url>
-          <loc>${baseUrl}/Technology</loc>
-          <lastmod>${currentDate}</lastmod>
-          <priority>0.7</priority>
-        </url>
-        <url>
-          <loc>${baseUrl}/Programming</loc>
-          <lastmod>${currentDate}</lastmod>
-          <priority>0.7</priority>
-        </url>
-        <url>
-          <loc>${baseUrl}/News</loc>
           <lastmod>${currentDate}</lastmod>
           <priority>0.7</priority>
         </url>

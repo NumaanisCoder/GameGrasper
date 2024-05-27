@@ -56,6 +56,7 @@ const Index = (props) => {
       <div className={` ${style.parent} ${isDarkMode ? style.dark : ""} `}>
       
         <div className={style.blogcontainer}>
+  
           {props.data.message.slice(startIndex, endIndex).map((blog, index) => (
             <BlogCard data={blog} key={index} />
             

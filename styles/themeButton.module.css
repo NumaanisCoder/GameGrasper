@@ -1,6 +1,6 @@
 .root {
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 22px;
     background: transparent;
     border: 3px outset black;
     border-top: 3px solid red;
@@ -31,7 +31,7 @@
   
   @media (min-width: 900px) {
     .root {
-      font-size: large;
+      font-size: 25px;
     }
   }
   

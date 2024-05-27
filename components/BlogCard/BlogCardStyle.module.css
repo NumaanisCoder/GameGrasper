@@ -6,9 +6,10 @@
     box-sizing: border-box;
     padding: 6px;
     color: black;
-    border-radius: 6px;
+    /* border-radius: 6px; */
     row-gap: 2px;
     font-family: 'Roboto', sans-serif;
+    border-bottom: 2px dashed gray;
     /* box-shadow: 1.5px 1.5px 1.5px gray; */
 }
 

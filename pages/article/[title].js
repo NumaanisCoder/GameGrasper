@@ -110,7 +110,7 @@ const Blog = (props) => {
         <meta name="twitter:card" content={summary} />
       </Head>
 
-      <nav
+      {/* <nav
         className={`${style.backLinksC} ${
           isDarkMode ? style.backLinksCDark : ""
         }`}
@@ -126,7 +126,7 @@ const Blog = (props) => {
         <Link href={`/Anime`}>Anime</Link>
         <Link href={`/Education`}>Education</Link>
         <Link href={`/Blogging`}>Blogging</Link>
-      </nav>
+      </nav> */}
 
       {/* Blog Content */}
       <main className={`${style.parent} ${isDarkMode ? style.darkp : ""}`}>

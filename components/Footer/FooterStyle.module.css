@@ -8,6 +8,11 @@
     padding: 20px;
 }
 
+.dark{
+    color: white;
+    background-color: rgb(32, 31, 31);
+}
+
 .company{
     width: 40%;
 }
@@ -24,10 +29,16 @@
     font-size: xx-large;
     border-bottom: 5px solid black;
 }
+.darkName{
+    color: white;
+    border-bottom: 5px dashed gray;
+
+}
 .LinkContainer{
     display: flex;
-    flex-direction: column;
-    gap: 4px;
+    justify-content: space-around;
+    gap: 15px;
+    
 }
 .link:hover{
     color: black;
@@ -36,7 +47,7 @@
 }
 .links{
     display: flex;
-    flex-direction: column;
+justify-content: space-around;
     gap: 2px;
 }
 .links > a{
@@ -52,6 +63,7 @@
     }
     .companyDescription{
         width: 100%;
+        padding: 10px 15px 10px 2px;
     }
     .goTo{
         width: 100%;

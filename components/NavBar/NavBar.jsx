@@ -6,6 +6,8 @@ import { faBars, faMagnifyingGlass, faTimes } from '@fortawesome/free-solid-svg-
 import { useSelector } from 'react-redux';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
+import ThemeButton from '../ToggelTheme/ThemeButton';
+
 
 const NavBar = () => {
   const router = useRouter();
@@ -50,6 +52,7 @@ const NavBar = () => {
           GameGrasper
         </Link>
       </label>
+        <ThemeButton/>
       <ul className={`${style.navUl} ${isDarkMode ? style.darkUL : ''}`}>
         <li className={`${style.navLi} ${isDarkMode ? style.darkActive : ''}`}>
           <Link className={`${style.active}`} href="/search" onClick={menuProvider}>

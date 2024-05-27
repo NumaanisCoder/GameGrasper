@@ -1,13 +1,16 @@
 import React from 'react'
 import style from './FooterStyle.module.css'
 import Link from 'next/link'
+import { useSelector } from 'react-redux'
 
 const Footer = () => {
+  const isDarkMode = useSelector((state) => state.theme.isDarkMode);
+
   return (
-    <footer className={style.root}>
+    <footer className={`${style.root} ${isDarkMode ? style.dark : ''}`}>
 
       <div className={style.company}>
-      <h3 className={style.companyName}>GameGrasper</h3>
+      <h3 className={`${style.companyName} ${isDarkMode ? style.darkName : ''}`}>GameGrasper</h3>
       <p className={style.companyDescription}>Discover the latest in gaming with GameGrasper! Stay updated with game reviews, news, tips, and guides for all your favorite titles. Dive into the world of gaming with expert insights, engaging content, and a passionate community. Level up your gaming experience with GameGrasper!</p>
       </div>
 
