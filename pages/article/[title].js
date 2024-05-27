@@ -90,7 +90,7 @@ const Blog = (props) => {
         {/* <!-- URL --> */}
         <meta
           property="og:url"
-          content={`https://relaxbyte.com/blog/${title.replace(/ /g, "-")}`}
+          content={`https://www.gamegrasper.blog/article/${title.replace(/ /g, "-")}`}
         />
 
         {/* <!-- Type (website, article, etc.) --> */}

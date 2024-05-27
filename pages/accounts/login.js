@@ -38,7 +38,6 @@ signInWithPopup(auth, provider)
     console.log(error);
     // ...
   });
-  router.push(localStorage.getItem("PreviousPath"));
 
   }
 
