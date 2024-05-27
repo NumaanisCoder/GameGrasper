@@ -61,7 +61,6 @@ const id = (props) => {
         formData.set("title", formValues.title);
         formData.set("summary", formValues.summary);
         formData.set("content", formValues.content);
-        formData.set("category", formValues.category);
         formData.set("image", file);
         const res = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/updateblog`,formData);
         const data = res.data;

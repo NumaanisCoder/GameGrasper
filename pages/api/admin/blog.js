@@ -7,7 +7,7 @@ import { user } from '@/models/User';
 
 
 const handler = async (req, res) => {
-    const Blogs = await Blog.find({}).populate("user").sort({_id: -1}).exec();
+    const Blogs = await Blog.find({}).sort({_id: -1}).exec();
     res.status(200).json({ message: Blogs });
 };
 
