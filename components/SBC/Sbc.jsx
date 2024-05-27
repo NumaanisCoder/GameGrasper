@@ -7,7 +7,7 @@ const Sbc = ({data}) => {
     const isDarkMode = useSelector(state=> state.theme.isDarkMode);
     const {title,image} = data;
     const encrypturl = title.replace(/-/,'~');
-    const urlpart =  `/blog/${encrypturl.replace(/ /g,'-')}`;
+    const urlpart =  `/article/${encrypturl.replace(/ /g,'-')}`;
   
 
   return (
