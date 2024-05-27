@@ -18,10 +18,10 @@ const handler = async (req, res) => {
     }
 
     // If cached data is not available, fetch from the database
-    const Blogs = await Blog.find({ category: { $nin: ["Blogging", "News", "Football", "Anime"] } }).sort({ _id: -1 }).exec();
+    const Blogs = await Blog.find({}).sort({ _id: -1 }).exec();
 
     // Cache the fetched data with a TTL (time-to-live) of 1 hour (3600 seconds)
-    cache.set("blogs", Blogs, 60*60*5);
+    cache.set("blogs", Blogs, 60*30);
 
     // Return the fetched data
     res.status(200).json({ message: Blogs });
