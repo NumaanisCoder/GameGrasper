@@ -123,7 +123,7 @@ export default function App({ Component, pageProps }) {
         {/* <!-- Google tag (gtag.js) --> */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-R85Y20GRL2"
+          src="https://www.googletagmanager.com/gtag/js?id=G-9LH71NM0T4"
         ></script>
         <script
           dangerouslySetInnerHTML={{
@@ -131,7 +131,7 @@ export default function App({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-R85Y20GRL2');
+            gtag('config', 'G-9LH71NM0T4');
           `,
           }}
         />

@@ -62,7 +62,7 @@ const Blog = (props) => {
   const encrypturl = title.replace(/-/g, "~");
   const urlpart = `${
     process.env.NEXT_PUBLIC_BASE_URL
-  }/blog/${encrypturl.replace(/ /g, "-")}`;
+  }/article/${encrypturl.replace(/ /g, "-")}`;
 
   return (
     <article className={`${style.root} ${isDarkMode ? style.dark : ""}`}>

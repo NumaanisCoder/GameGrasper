@@ -14,7 +14,9 @@
     
 }
 .parent.dark{
-    background: linear-gradient(to right, #290c43, #300090);
+    background: black;
+    border-radius: 0;
+    border-bottom: 2px solid white;
 }
 
 
