@@ -147,7 +147,7 @@ ol{
 ol > li::marker{
   content: '[' counter(list-item) ']';
   font-weight: bold;
-  color: crimson;
+  color: rgb(220, 63, 20);
 }
 input::placeholder{
   color: white;

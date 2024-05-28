@@ -6,7 +6,7 @@
     background-color: white;
     top: 0;
     z-index: 99;
-    background: white;
+    background: black;
     border-bottom: 2px solid black;
 }
 
@@ -28,7 +28,7 @@
     margin: 0 5px;
 }
 .navLi > a{
-    color: black;
+    color: white;
     border-radius: 6px;
     font-size: 14px;
     font-weight: 600;
@@ -37,7 +37,7 @@
 }
 
 .navLi > a:hover{
-    background-color: crimson;
+    background-color: rgb(220, 63, 20);
     color: white;
     transition: .3s;
 }
@@ -48,7 +48,7 @@
 
 
 .checkbtn{
-    color: black;
+    color: white;
     font-size: 30px;
     float: right;
     line-height: 70px;
@@ -61,13 +61,15 @@
 }
 
 .Logo{
-   
-    color: black;
+    color: rgb(220, 63, 20);
     -webkit-text-stroke-color: black;
     font-family: 'AvengersFont';
     font-size: 30px;
     line-height: 60px;
     padding: 0 100px;
+}
+.Logo span{
+    color: white;
 }
 
 .Logo.darkLogo{

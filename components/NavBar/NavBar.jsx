@@ -49,7 +49,7 @@ const NavBar = () => {
       </label>
       <label>
         <Link className={`${style.Logo} ${style.protestStrikeRegular} ${isDarkMode ? style.darkLogo : ''}`} href="/" onClick={menuProvider}>
-          GameGrasper
+          Game<span>Grasper</span>
         </Link>
       </label>
         <ThemeButton/>

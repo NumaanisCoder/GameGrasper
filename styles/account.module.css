@@ -14,7 +14,7 @@
     color: white;
     padding: 15px 25px;
    
-    background: linear-gradient(to bottom, black 16%, crimson 50%);
+    background: linear-gradient(to bottom, black 50%, rgb(220, 63, 20) 50%);
     
     display: flex;
     flex-direction: column;
