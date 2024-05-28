@@ -146,11 +146,12 @@ ol{
 }
 ol > li::marker{
   content: '[' counter(list-item) ']';
-  color: crimson;
   font-weight: bold;
-  color: #2172eb;
+  color: crimson;
 }
-
+input::placeholder{
+  color: white;
+}
 
 code{
     max-width: 100%;

@@ -13,7 +13,9 @@
     margin-top: 20px;
     color: white;
     padding: 15px 25px;
-    background-color: black;
+   
+    background: linear-gradient(to bottom, black 16%, crimson 50%);
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,14 +44,16 @@
     font-weight: 600;
 }
 
-.formGroup > input{
+.formGroup input{
     width: 80%;
-    border-radius: 6px;
     outline: 0;
     border: none;
     padding: 10px;
-    background-color: #f1f1f1;
+    color: white;
+    border-bottom: 2px solid white;
+    background: transparent;
 }
+
 .formGroup > a{
     padding: 0px 0px;
     color: rgb(130, 3, 3);
@@ -67,19 +71,24 @@
 .navD{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
 }
 
 .navD > button{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    width: fit-content;
     gap: 3px;
     padding: 4px 6px;
     background-color: white;
     border: 1px solid white;
     border-radius: 10px;
     box-shadow: 2px 2px 2px black;
+}
+.navD > button:hover{
+    cursor: pointer;
 }
 
 .navD > button > img{

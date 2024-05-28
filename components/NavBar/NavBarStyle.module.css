@@ -37,7 +37,7 @@
 }
 
 .navLi > a:hover{
-    background-color: black;
+    background-color: crimson;
     color: white;
     transition: .3s;
 }
