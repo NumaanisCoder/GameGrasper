@@ -1,5 +1,5 @@
 .root{
-    min-height: 80vh;
+    min-height: 90vh;
     display: flex;
     gap: 14px;
     flex-direction: column;
@@ -7,6 +7,7 @@
     align-items: center;
     font-family: "Ubuntu", sans-serif;
     width: 100%;
+    background-color: #f2f2f2;
 }
 
 .form{

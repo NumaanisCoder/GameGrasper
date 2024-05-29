@@ -1,4 +1,4 @@
-.parent{
+.parent {
     height: 60px;
     width: 100%;
     color: white;
@@ -10,24 +10,28 @@
     border-bottom: 2px solid black;
 }
 
-.dark{
+.dark {
     background: black;
     color: white;
 }
 
-.navUl{
+.navUl {
     float: right;
     margin-right: 20px;
 }
-.navUl.darkUL{
+
+.navUl.darkUL {
     background-color: black;
 }
-.navLi{
+
+.navLi {
     display: inline-block;
     line-height: 60px;
     margin: 0 5px;
+    box-sizing: border-box;
 }
-.navLi > a{
+
+.navLi>a {
     color: white;
     border-radius: 6px;
     font-size: 14px;
@@ -38,16 +42,16 @@
 
 .navLi > a:hover{
     background-color: rgb(220, 63, 20);
-    color: white;
-    transition: .3s;
+    color: black;
+    
 }
 
-.darkActive > a:hover{
+.darkActive>a:hover {
     background-color: rgb(65, 65, 65);
 }
 
 
-.checkbtn{
+.checkbtn {
     color: white;
     font-size: 30px;
     float: right;
@@ -56,11 +60,12 @@
     cursor: pointer;
     display: none;
 }
-.check{
+
+.check {
     display: none;
 }
 
-.Logo{
+.Logo {
     color: rgb(220, 63, 20);
     -webkit-text-stroke-color: black;
     font-family: 'AvengersFont';
@@ -68,40 +73,43 @@
     line-height: 60px;
     padding: 0 100px;
 }
-.Logo span{
+
+.Logo span {
     color: white;
 }
 
-.Logo.darkLogo{
+.Logo.darkLogo {
     color: white;
     -webkit-text-stroke-color: black;
 }
 
-.darkActive > a {
+.darkActive>a {
     color: white;
 }
 
 @media (max-width:952px) {
-    .Logo{
+    .Logo {
         font-size: 30px;
         line-height: 70px;
         padding-left: 50px;
     }
-    .navLi > a{
+
+    .navLi>a {
         font-size: 16px;
     }
 }
 
 @media (max-width: 858px) {
 
-    .parent{
+    .parent {
         height: 70px;
     }
 
-    .checkbtn{
+    .checkbtn {
         display: block;
     }
-    .navUl{
+
+    .navUl {
         position: fixed;
         width: 100%;
         height: 100vh;
@@ -111,37 +119,40 @@
         text-align: center;
         transform: all .5s;
     }
-    .navLi{
+
+    .navLi {
         display: block;
         margin: 50px 0;
         line-height: 30px;
     }
-    .active{
+
+    .active {
         background: transparent;
     }
-    
-    .navLi > a {
+
+    .navLi>a {
         color: black;
         font-size: 20px;
     }
 
-    .darkIcon{
+    .darkIcon {
         color: white;
     }
 
-    .darkActive > a{
+    .darkActive>a {
         color: white;
     }
-   
 
-    .check:checked ~ .navUl{
+
+    .check:checked~.navUl {
         left: 0;
         transition: all .6s;
     }
-    .check:not(:checked) ~ .navUl {
-        left: -100%; /* or any other value to hide the .navUl */
+
+    .check:not(:checked)~.navUl {
+        left: -100%;
+        /* or any other value to hide the .navUl */
         transition: all .6s;
     }
-    
-}
 
+}

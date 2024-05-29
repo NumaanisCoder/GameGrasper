@@ -150,7 +150,7 @@
     font-family: "Ubuntu", sans-serif;
    font-size: 700;
    /* text-shadow: 1px 1px 1px blue; */
-   background: black;
+   background: linear-gradient(to bottom, black 60%, rgb(220, 63, 20) 70%);
    width: fit-content;
    color: white;
    border: 1px solid white;

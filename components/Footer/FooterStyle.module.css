@@ -1,75 +1,49 @@
 .root{
-    width: 100%;
     display: flex;
-    justify-content: space-around;
     background-color: black;
     color: white;
-    box-sizing: border-box;
-    padding: 20px;
-}
-
-.dark{
-    color: white;
-    background-color: rgb(32, 31, 31);
+    justify-content: space-around;
+    padding: 10px 20px;
 }
 
 .company{
-    width: 40%;
-}
-
-.goTo{
-    width: 60%;
+    width: 50%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 15px;
 }
 .companyName{
-    font-family: 'AvengersFont';
-    font-weight: 200;
-    color: white;
-    font-size: xx-large;
-    border-bottom: 5px solid black;
+    font-size: 30px;
 }
-.darkName{
-    color: white;
-    border-bottom: 5px dashed gray;
 
-}
 .LinkContainer{
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     gap: 15px;
-    
 }
-.link:hover{
-    color: black;
-    font-weight: 600;
-    background-color: white;
-}
+
 .links{
     display: flex;
-justify-content: space-around;
-    gap: 2px;
+    flex-direction: column;
+    gap: 10px;
 }
+
 .links > a{
-    padding: 3px 2px;
+    box-sizing: border-box;
+    padding: 5px 10px;
 }
-@media (max-width:500px) {
+
+.links > a:hover{
+    background-color: rgb(220, 63, 20);
+}
+
+@media (max-width: 600px) {
     .root{
-        flex-direction: column-reverse;
-        gap: 20px;
+        flex-direction: column;
+        gap: 50px;
     }
     .company{
-        width: 100%;
-    }
-    .companyDescription{
-        width: 100%;
-        padding: 10px 15px 10px 2px;
-    }
-    .goTo{
-        width: 100%;
+        width: 90%;
     }
     
-    .links{
-        gap: 4px;
-    }
 }
