@@ -143,6 +143,9 @@ router.back();
         <div className={style.formGroup}>
           <button className={style.button}>{submitButton}</button>
         </div>
+        <div className={style.formGroup}>
+          <a href="/accounts/forgetpassword">Forget password ? </a>
+        </div>
       </form>
 
       <div className={style.navD}>

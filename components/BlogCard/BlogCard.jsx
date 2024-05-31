@@ -17,8 +17,10 @@ const BlogCard = ({ data }) => {
   const emoji = getEmoji(category);
 
 
-  const encrypturl = title.replace(/-/g,'~');
-    const urlpart =  `/article/${encrypturl.replace(/ /g,'-')}`;
+  const encrypturl = title.replace(/-/g, '~');
+const questionmark = encrypturl.replace(/\?/g, '$');
+const urlpart = `/article/${questionmark.replace(/ /g, '-')}`;
+
   
 
   function random(createdAt) {

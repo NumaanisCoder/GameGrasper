@@ -1,0 +1,34 @@
+.root{
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    padding: 10px 15px;
+    gap: 8px;
+}
+
+.form > input{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid red;
+    outline: 0;
+    caret-color: red;
+}
+.form > input::placeholder{
+    color: red;
+}
+
+.form > button{
+    border: none;
+    max-width: fit-content;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background-color: black;
+    color: white;
+}
