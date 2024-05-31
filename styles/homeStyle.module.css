@@ -8,12 +8,14 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  background-color: #181818;
 }
 
 .dark{
   background-color: black;
   color: white;
 }
+
 
 .blogcontainer {
   margin-top: 100px;

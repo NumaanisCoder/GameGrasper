@@ -54,6 +54,8 @@ const Index = (props) => {
         <link rel="canonical" href={`${process.env.NEXT_PUBLIC_BASE_URL}`} />
       </Head>
       <div className={` ${style.parent} ${isDarkMode ? style.dark : ""} `}>
+
+  
       
         <div className={style.blogcontainer}>
   

@@ -66,9 +66,7 @@ const urlpart = `/article/${questionmark.replace(/ /g, '-')}`;
           <p className={`${styles.Link} ${isDarkMode ? styles.darkLink : ""}`}>
             <Link href={urlpart}>Read</Link>
           </p>
-          <p className={`${styles.category} ${isDarkMode ? styles.darkcategory : ""}`}>
-            <span className={`${styles.views} ${isDarkMode ? styles.darkViews : ""}`}>{category}</span>{" "}
-          </p>
+          
         </div>
         <p className={styles.date}>
         &nbsp; <FontAwesomeIcon icon={faCalendarDays} /> &nbsp; <span className={`${styles.views} ${isDarkMode ? styles.darkViews : ""}`}>{random(createdAt)}</span>
