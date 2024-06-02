@@ -151,7 +151,7 @@ router.back();
           <button className={style.button}>{submitButton}</button>
         </div>
         <div className={style.formGroup}>
-          <a href="/accounts/forgetpassword">Forget password ? </a>
+          <Link href="/accounts/forgetpassword">Forget password ? </Link>
         </div>
       </form>
 

@@ -39,14 +39,14 @@ const ForgetPassword = () => {
   return (
     <div className={style.root}>
       <form className={style.form} onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label>
         <input 
           type="email" 
           id="email" 
           onChange={(e) => setEmail(e.target.value)} 
-          placeholder="Enter your email" 
+  
           value={email}
         />
+        <label htmlFor="email" className={style.lableEmail}></label>
         <button type="submit" disabled={isLoading}>{submitLabel}</button>
         {message && <p className={style.message}>{message}</p>}
       </form>
