@@ -78,15 +78,18 @@ signInWithPopup(auth, provider)
         <h1>Sign up</h1>
         </div>
         <div className={style.formGroup}>
-            <input type="text" name="username" id="username" value={FormValues.username} placeholder='Username' autoComplete="off"  onChange={inputHandler} required/>
+            <input type="text" name="username" value={FormValues.username}  autoComplete="off"  onChange={inputHandler} required/>
+            <label className={style.usernamelabel}></label>
             <p>{error.usernameError}</p>
         </div>
         <div className={`${style.formGroup} ${style.emailFormGroup}`}>
-            <input type="email" name="email" id="email"  placeholder='Email' value={FormValues.email} autoComplete="off" onChange={inputHandler}  required/>
+            <input type="email" name="email" id="email"   value={FormValues.email} autoComplete="off" onChange={inputHandler}  required/>
+            <label className={style.emailLabel}></label>
             <p>{error.emailError}</p>
         </div>
         <div className={style.formGroup}>
-            <input type="password" name="password" id="password" placeholder='Password' value={FormValues.password}  autoComplete="off" onChange={inputHandler}  required/>
+            <input type="password" name="password" id="password" value={FormValues.password}  autoComplete="off" onChange={inputHandler}  required/>
+            <label className={style.passwordLabel}></label>
             <p></p>
         </div>
         <div className={style.formGroup}>

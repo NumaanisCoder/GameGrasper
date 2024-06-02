@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import style from "@/styles/account.module.css";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Cookies from "js-cookie";
-
 
 
 
@@ -18,6 +17,7 @@ import { initializeApp } from "firebase/app";
 
 
 const signup = () => {
+
   const router = useRouter();
   
   const SignInWithGoogle = () =>{
@@ -69,6 +69,8 @@ router.back();
 
   function inputHandler(e) {
     const { name, value } = e.target;
+
+
     setFormValues({ ...FormValues, [name]: value });
     setError({ emailError: "", passwordError: "" });
   }
@@ -99,9 +101,11 @@ router.back();
       setsubmitButton("Loginned Successfully!");
       router.push('/');
     }
-
-    console.log(data);
   }
+
+
+
+
   return (
     <div className={style.root}>
       <form
@@ -116,15 +120,17 @@ router.back();
 
         <div className={`${style.formGroup} ${style.emailFormGroup}`}>
           <input
+          
             type="email"
             name="email"
             id="email"
-            placeholder="Email"
+            className={style.emailInput}
             value={FormValues.email}
             autoComplete="off"
             onChange={inputHandler}
             required
           />
+          <label className={style.emailLabel}></label>
           <p>{error.emailError}</p>
         </div>
         <div className={style.formGroup}>
@@ -132,12 +138,13 @@ router.back();
             type="password"
             name="password"
             id="password"
-            placeholder="Password"
+            className={style.passwordInput}
             value={FormValues.password}
             autoComplete="off"
             onChange={inputHandler}
             required
           />
+          <label className={style.passwordLabel}></label>
           <p>{error.passwordError}</p>
         </div>
         <div className={style.formGroup}>
