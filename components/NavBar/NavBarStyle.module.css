@@ -87,6 +87,12 @@
     color: white;
 }
 
+.accountIcon{
+    display: flex;
+    gap: 5px;
+    background-color: white;
+}
+
 @media (max-width:952px) {
     .Logo {
         font-size: 30px;
@@ -113,13 +119,13 @@
         position: fixed;
         width: 100%;
         height: 100vh;
-        background-color: white;
+        background-color: #242424;
         top: 70px;
         left: -100%;
         text-align: center;
         transform: all .5s;
     }
-
+    
     .navLi {
         display: block;
         margin: 50px 0;
@@ -129,9 +135,10 @@
     .active {
         background: transparent;
     }
-
+    
     .navLi>a {
-        color: black;
+    
+        color: white;
         font-size: 20px;
     }
 

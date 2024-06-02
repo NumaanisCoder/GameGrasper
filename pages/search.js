@@ -52,7 +52,7 @@ const search = () => {
             <BlogCard key={Index} data={Value} />
           ))
         ) : (
-          <h3>{Load}</h3>
+          <h3 style={{color:'white'}}>{Load}</h3>
         )}
       </div>
     </div>

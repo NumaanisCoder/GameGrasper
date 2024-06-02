@@ -1,16 +1,19 @@
 .root{
-    min-height: 80vh;
+    min-height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #181818;
 }
 
 .form{
     display: flex;
     flex-direction: column;
-    background-color: #f2f2f2;
+    background-color: #242424;
+    color: white;
     padding: 10px 15px;
     gap: 8px;
+    width: 50%;
 }
 
 .form > input{
@@ -19,16 +22,17 @@
     border-bottom: 2px solid red;
     outline: 0;
     caret-color: red;
+    color: white;
 }
 .form > input::placeholder{
     color: red;
 }
 
 .form > button{
+    background-color: red;
     border: none;
     max-width: fit-content;
     padding: 5px 10px;
     border-radius: 6px;
-    background-color: black;
     color: white;
 }

@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import style from './NavBarStyle.module.css';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faMagnifyingGlass, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faMagnifyingGlass, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 import ThemeButton from '../ToggelTheme/ThemeButton';
+
 
 
 const NavBar = () => {
@@ -77,13 +78,13 @@ const NavBar = () => {
         {!isLogin ? (
           <li className={`${style.navLi} ${isDarkMode ? style.darkActive : ''}`}>
             <Link href="/accounts/login" onClick={menuProvider}>
-              Login
+            <FontAwesomeIcon icon={faUser} /> Login
             </Link>
           </li>
         ) : (
           <li className={`${style.navLi} ${isDarkMode ? style.darkActive : ''}`}>
-            <Link href="/" onClick={logout}>
-              Logout
+            <Link href="/" onClick={logout} className={style.accountIcon}>
+            <FontAwesomeIcon icon={faUser} />  Logout
             </Link>
           </li>
         )}

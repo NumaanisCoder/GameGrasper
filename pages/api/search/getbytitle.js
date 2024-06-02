@@ -6,7 +6,7 @@ import { user } from '@/models/User';
 const handler = async (req, res) => {
     console.log(req.body.query);
     let regex = new RegExp(req.body.query, "i");
-    const blog = await Blog.find({title: regex}).populate('user').sort({_id: -1}).exec();
+    const blog = await Blog.find({title: regex}).sort({_id: -1}).exec();
     res.status(200).json({ message: blog });
 };
 

@@ -1,50 +1,33 @@
 .parent{
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 100vh;
+    min-height: 100vh;
+    background: #181818;
 }
 
 .searchContainer{
-    width: 50%;
-    border-radius: 1px;
-    height: 60px;
-}
+    justify-content: center;
+display: flex;
 
+}
 
 .searchInput{
+    margin-top: 100px;
+    width: 50rem;
+    background-color: transparent;
     border: none;
-    width: 100%;
-    height: 50px;
-    border-radius: 10px;
+    border-bottom: 2px solid red;
+    padding: 10px 15px;
     outline: 0;
-    padding: 10px;
+    color: white;
+    font-size: 20px;
     caret-color: red;
-    font-size: 15px;
-    font-weight: 600;
-    font-family: 'myfont';
-    box-shadow:  2px 2px 3px gray, -1px -1px 1px gray ;
 }
-
 
 .blogContainer{
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    margin: 0px 10px;
-    transition: all 4s linear;
-}
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
 
-@media (max-width: 480px) {
-    .searchContainer{
-        width: 90%;
-    }
-    .searchInput{
-        height: 36px;
-        font-size: 20px;
-    }
 }
