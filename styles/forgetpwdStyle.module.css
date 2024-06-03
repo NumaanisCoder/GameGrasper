@@ -63,3 +63,12 @@
     transition: 0.3s ease;
     background-color: black;
 }
+
+
+@media (max-width: 600px) {
+
+    .form{
+        width: 75%;
+    }
+    
+}
