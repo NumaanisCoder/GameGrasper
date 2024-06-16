@@ -13,8 +13,11 @@ import AdBanner from "@/components/AdBanner";
 import SingleComment from "@/components/comment/SingleComment";
 import Cookies from "js-cookie";
 import axios from "axios";
+import { useSnackbar } from "notistack";
 
 const Blog = (props) => {
+
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   
   const token = Cookies.get('token');
   const router = useRouter();
@@ -199,6 +202,7 @@ const Blog = (props) => {
                     `${process.env.NEXT_PUBLIC_BASE_URL}/api/comments/uploadcomment`,
                     Comment
                   );
+                  enqueueSnackbar("Comment Added",{variant:"success"})
                   const data = res.data;
                   const username = data.username;
 

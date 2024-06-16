@@ -87,11 +87,6 @@
     color: white;
 }
 
-.accountIcon{
-    display: flex;
-    gap: 5px;
-    background-color: white;
-}
 
 @media (max-width:952px) {
     .Logo {

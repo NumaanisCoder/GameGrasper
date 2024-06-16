@@ -8,9 +8,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggelTheme } from "@/store/themeSlice";
 import Cookies from "js-cookie";
 import getFilterOptions from "@/lib/FilterProvider";
+import { useSnackbar } from "notistack";
+
 
 const Admin = (props) => {
 
+  const {enqueueSnackbar, closeSnackbar} = useSnackbar();
    const getOptions = getFilterOptions();
 
   const dispatch = useDispatch();
@@ -91,10 +94,11 @@ const Admin = (props) => {
     navigator.clipboard.writeText(imageurl)
       .then(() => {
         setlabel("Copied");
+        enqueueSnackbar("Copied", {variant: "info"});
         setTimeout(() => {
           setlabel("Copy");
         }, 1000);
-        console.log('Text successfully copied to clipboard:', imageurl);
+       
       })
       .catch((err) => {
         console.error('Unable to copy text to clipboard:', err);
@@ -115,6 +119,7 @@ const Admin = (props) => {
 
     const data = res.data;
     if (data.progress) {
+      enqueueSnackbar("Posted", {variant: "success"});
       setSubmitButton("Posted");
       router.reload();
     }

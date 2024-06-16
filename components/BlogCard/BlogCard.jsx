@@ -7,8 +7,11 @@ import Image from "next/image";
 import { useSelector } from "react-redux";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useSnackbar } from "notistack";
 
 const BlogCard = ({ data }) => {
+  
+
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
 
   const { _id, title, image, content, category, createdAt, views, summary } = data;
@@ -64,7 +67,10 @@ const urlpart = `/article/${questionmark.replace(/ /g, '-')}`;
         <p className={styles.content}>{removeHtmlTags(summary)}....</p>
         <div className={styles.linkCategoryDiv}>
           <p className={`${styles.Link} ${isDarkMode ? styles.darkLink : ""}`}>
-            <Link href={urlpart}>Read</Link>
+            <Link onClick={()=> enqueueSnackbar("Noiceee", {
+        autoHideDuration: 2000,
+        variant: "error",
+      })} href={urlpart}>Read</Link>
           </p>
           
         </div>

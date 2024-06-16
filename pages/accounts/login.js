@@ -14,9 +14,13 @@ const provider = new GoogleAuthProvider();
 
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { initializeApp } from "firebase/app";
+import { useSnackbar } from "notistack";
 
 
 const signup = () => {
+  const {enqueueSnackbar, closeSnackbar} = useSnackbar();
+
+
 
   const router = useRouter();
   
@@ -92,13 +96,16 @@ router.back();
     const data = await response.json();
     if (data.status == 404) {
       setsubmitButton("Login");
+      enqueueSnackbar("Email Not Found",{variant:"error"});
       setError({ emailError: "Email is not registerd" });
     } else if (data.status == 402) {
       setsubmitButton("Login");
+      enqueueSnackbar("Incorrect Password",{variant:"error"});
       setError({ passwordError: "Password Not matched" });
     } else if (data.status == 200) {
       Cookies.set("token",data.token, {expires: 7})
       setsubmitButton("Loginned Successfully!");
+      enqueueSnackbar("Logging In !!",{variant:"info"});
       router.push('/');
     }
   }

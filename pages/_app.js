@@ -10,11 +10,13 @@ import NextTopLoader from "nextjs-toploader";
 import Script from "next/script";
 import store from "@/store/store";
 import CookieConsentComponent from "@/components/CookieConstent";
+import { SnackbarProvider } from "notistack";
 
 
 export default function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
+    <SnackbarProvider autoHideDuration={2000}>
       <Head>
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -141,6 +143,7 @@ export default function App({ Component, pageProps }) {
       <Component {...pageProps} />
       <CookieConsentComponent />
       <Footer />
+      </SnackbarProvider>
     </Provider>
   );
 }

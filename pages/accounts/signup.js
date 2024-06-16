@@ -10,12 +10,15 @@ import { getAnalytics } from "firebase/analytics";
 const provider = new GoogleAuthProvider();
 
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useSnackbar } from "notistack";
 
 
 
 
 const signup = () => {
-  let signinWithGoogleSucess = false;
+
+  const {enqueueSnackbar, closeSnackbar} = useSnackbar();
+
   const router = useRouter();
 
   const SignInWithGoogle = () =>{
@@ -34,7 +37,6 @@ signInWithPopup(auth, provider)
     console.log(error);
     // ...
   });
-  router.back();
   }
 
 
@@ -58,14 +60,17 @@ signInWithPopup(auth, provider)
         const res = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/user/signup`, FormValues);
         const data = res.data;
         if(data.status == 409){
-          setsubmitButton("Sign up!")
+          setsubmitButton("Sign up!");
+          enqueueSnackbar("Username Already Taken ",{variant:"error"});
           setError({usernameError:"username is already taken"})
         }
         if(data.status == 402){
-          setsubmitButton("Sign Up!")
+          setsubmitButton("Sign Up!");
+          enqueueSnackbar("Email is already registered",{variant:"error"});
           setError({emailError:"Email is already registerd"})
         }
         if(data.status == 200){
+          enqueueSnackbar("Registering...",{variant:"info"});
           setsubmitButton("Registerd Suceessfully!");
           router.push('/');
         }
