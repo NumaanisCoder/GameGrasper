@@ -45,7 +45,7 @@ const AdminBlog = ({ data }) => {
 </button>
 
           <Link className={style.viewButton} href
-          ={`/blog/${data.title.replace(/ /g,'-')}`}>View</Link>
+          ={`/article/${data.title.replace(/ /g,'-')}`}>View</Link>
           <Link className={style.editButton} href={
             `/admin/editblog/${data._id}`
           }>Edit</Link>
