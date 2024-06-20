@@ -16,7 +16,7 @@ const aboutus = () => {
 
 <p>This platform is more than a website; it's a journey crafted for individuals seeking a personalized touch in their quest for knowledge and entertainment. From the inception of articles to the delivery of content, every aspect is carefully considered to ensure your experience is not just informative but also enjoyable.</p>
 
-<p>Join me on this solo publishing adventure at Relaxbyte, where curiosity meets creation, and exploration knows no bounds. Thank you for being a part of this digital venture.</p>
+<p>Join me on this solo publishing adventure at gamegrasper, where curiosity meets creation, and exploration knows no bounds. Thank you for being a part of this digital venture.</p>
     </div>
     </div>
   )
