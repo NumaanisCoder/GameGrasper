@@ -185,6 +185,7 @@ const Blog = (props) => {
                 }}
                 cols="20"
                 rows="5"
+                placeholder="Comment Here..."
                 required
               ></textarea>
               <button
