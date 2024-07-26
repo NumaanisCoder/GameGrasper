@@ -175,7 +175,7 @@ const Blog = (props) => {
                 e.preventDefault();
               }}
             >
-              <label htmlFor="comment">Comment:</label>
+              <label className={style.labelComment} htmlFor="comment"></label>
               <textarea
                 name="comment"
                 value={Comment.message}
@@ -183,9 +183,9 @@ const Blog = (props) => {
                 onChange={(e) => {
                   setComment({ ...Comment, message: e.target.value });
                 }}
+                className={style.commentTextArea}
                 cols="20"
                 rows="5"
-                placeholder="Comment Here..."
                 required
               ></textarea>
               <button

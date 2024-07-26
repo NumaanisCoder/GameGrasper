@@ -196,12 +196,7 @@ summary{
   font-family: 'Droid Serif';
   font-weight: 600;
 }
-textarea{
-  box-sizing: border-box;
-  font-size: 16px;
-  padding: 8px;
-  font-family: 'Droid Serif';
-}
+
 table, td, th {
   border: 1px solid;
 
