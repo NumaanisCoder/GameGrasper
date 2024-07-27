@@ -41,6 +41,7 @@ const Admin = (props) => {
     content: "",
     summary: "",
     category: "",
+    tags:""
   });
   const [SubmitButton, setSubmitButton] = useState("Post");
   const imageformValue = new FormData();
@@ -115,6 +116,8 @@ const Admin = (props) => {
     formData.set("summary", formValues.summary);
     formData.set("content", formValues.content);
     formData.set("image", file);
+    formData.set("tags",formValues.tags)
+
     const res = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/uploadblog`,formData);
 
     const data = res.data;
