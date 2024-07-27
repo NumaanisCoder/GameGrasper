@@ -282,6 +282,10 @@
     justify-content: start;
     align-items: center;
 }
+.tagContainer span{
+    font-size: 20px;
+    font-weight: bold;
+}
 
 @media (max-width: 580px) {
     .blogimage {

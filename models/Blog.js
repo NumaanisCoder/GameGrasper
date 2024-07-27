@@ -23,8 +23,7 @@ const blogSchema = new Schema({
     type: String,
   },
   tags: {
-    type: String, 
-    required: [true, "Blog tags are required"]
+    type: String
   },
   createdAt: {
     type: Number,

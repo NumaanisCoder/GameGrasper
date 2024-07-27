@@ -65,7 +65,7 @@ const Blog = (props) => {
   const encrypturl = title.replace(/-/g, "~");
   const urlpart = `${process.env.NEXT_PUBLIC_BASE_URL}/article/${encrypturl.replace(/ /g, "-")}`;
 
-  const arrayoftags = tags.split(', ');
+  const arrayoftags = tags && tags.split(', ');
 
   return (
     <article className={`${style.root} ${isDarkMode ? style.dark : ""}`}>
@@ -124,7 +124,7 @@ const Blog = (props) => {
         ></p>
         
         <div className={style.tagContainer}>
-          Tags: {arrayoftags && arrayoftags.map((value, index) => (
+          {arrayoftags && <span>Tags:</span>} {arrayoftags && arrayoftags.map((value, index) => (
             <Tag text={value} key={index}/>
           ))}
         </div>
