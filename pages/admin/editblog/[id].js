@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 
 const id = (props) => {
   const isDarkMode = useSelector(state => state.theme.isDarkMode);
+
     let formData = new FormData();
     const router = useRouter();
     const [file, setfile] = useState(null);
@@ -15,7 +16,7 @@ const id = (props) => {
         title: props.data.blog.title,
         content: props.data.blog.content,
         summary: props.data.blog.summary,
-        tags: props.data.tags || ""
+        tags: props.data.blog.tags
       });
       const handleChange = (e) => {
         const {value, name} = e.target;
@@ -135,8 +136,8 @@ const id = (props) => {
             <input
               type="text"
               name="tags"
-              onChange={handleChange}
               value={formValues.tags}
+              onChange={handleChange}
               required
             />
           </div>

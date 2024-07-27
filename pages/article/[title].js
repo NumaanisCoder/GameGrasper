@@ -14,7 +14,7 @@ import SingleComment from "@/components/comment/SingleComment";
 import Cookies from "js-cookie";
 import axios from "axios";
 import { useSnackbar } from "notistack";
-import Tag from "@/components/tag/tag";
+import Tag from "@/components/tag/Tag";
 
 const Blog = (props) => {
   const { enqueueSnackbar } = useSnackbar();
@@ -124,7 +124,7 @@ const Blog = (props) => {
         ></p>
         
         <div className={style.tagContainer}>
-          {arrayoftags && arrayoftags.map((value, index) => (
+          Tags: {arrayoftags && arrayoftags.map((value, index) => (
             <Tag text={value} key={index}/>
           ))}
         </div>
