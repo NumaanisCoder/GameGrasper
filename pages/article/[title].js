@@ -1,6 +1,6 @@
+import React, { useEffect, useState } from "react";
 import NavBar from "@/components/NavBar/NavBar";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
 import style from "@/styles/BlogPage.module.css";
 import Head from "next/head";
 import Sbc from "@/components/SBC/Sbc";
@@ -14,10 +14,10 @@ import SingleComment from "@/components/comment/SingleComment";
 import Cookies from "js-cookie";
 import axios from "axios";
 import { useSnackbar } from "notistack";
+import Tag from "@/components/tag/tag";
 
 const Blog = (props) => {
-
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
   
   const token = Cookies.get('token');
   const router = useRouter();
@@ -29,14 +29,12 @@ const Blog = (props) => {
     content,
     category,
     summary,
-    views,
-    user,
+    tags,
     createdAt,
     comment,
   } = props.data.message;
 
   const [AllComments, setAllComments] = useState(comment)
-
   const [Comment, setComment] = useState({
     message: "",
     token: "",
@@ -45,89 +43,57 @@ const Blog = (props) => {
 
   const emoji = getEmoji(category);
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
-  const [isMobile, setisMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
 
   useEffect(() => {
-   
-    if (window.innerWidth < 750) {
-      setisMobile(true);
-    } else {
-      setisMobile(false);
-    }
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 750);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  function random(milliseconds) {
+  function formatDate(milliseconds) {
     const date = new Date(milliseconds);
-    const realDate = date.toUTCString();
-    return realDate;
+    return date.toUTCString();
   }
 
   const encrypturl = title.replace(/-/g, "~");
-  const urlpart = `${
-    process.env.NEXT_PUBLIC_BASE_URL
-  }/article/${encrypturl.replace(/ /g, "-")}`;
+  const urlpart = `${process.env.NEXT_PUBLIC_BASE_URL}/article/${encrypturl.replace(/ /g, "-")}`;
+
+  const arrayoftags = tags.split(', ');
 
   return (
     <article className={`${style.root} ${isDarkMode ? style.dark : ""}`}>
       <Head>
         <title>{title}</title>
         <meta name="description" content={summary} />
-
         <link rel="canonical" href={urlpart} />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4131180580860903"
-          crossorigin="anonymous"
-        ></script>
-
         <meta property="og:title" content={title} />
-
-        {/* <!-- Description --> */}
         <meta property="og:description" content={summary} />
-
-        {/* <!-- Image --> */}
         <meta property="og:image" content={image} />
         <meta property="og:image:secure_url" content={image} />
         <meta property="og:image:alt" content={title} />
-
-        {/* <!-- URL --> */}
-        <meta
-          property="og:url"
-          content={`https://www.gamegrasper.blog/article/${title.replace(/ /g, "-")}`}
-        />
-
-        {/* <!-- Type (website, article, etc.) --> */}
+        <meta property="og:url" content={`https://www.gamegrasper.blog/article/${title.replace(/ /g, "-")}`} />
         <meta property="og:type" content="article" />
-
-        {/* <!-- Title --> */}
         <meta name="twitter:title" content={title} />
-
-        {/* <!-- Description --> */}
         <meta name="twitter:description" content={summary} />
-
-        {/* <!-- Image --> */}
         <meta name="twitter:image" content={image} />
         <meta name="twitter:image:alt" content={image} />
-
-        {/* <!-- Card Type (summary, summary_large_image, etc.) --> */}
         <meta name="twitter:card" content={summary} />
       </Head>
 
-    
-      {/* Blog Content */}
       <main className={`${style.parent} ${isDarkMode ? style.darkp : ""}`}>
         <div className={style.metaInfo}>
           <h1 className={style.title}>{title}</h1>
-        
-          
           <p className={style.metap}>
-            Published :{" "}
-            <b
-              className={`${style.author} ${
-                isDarkMode ? style.darkAuthor : ""
-              }`}
-            >
-              {random(createdAt)}
+            Published:{" "}
+            <b className={`${style.author} ${isDarkMode ? style.darkAuthor : ""}`}>
+              {formatDate(createdAt)}
             </b>
           </p>
         </div>
@@ -156,16 +122,19 @@ const Blog = (props) => {
           className={style.content}
           dangerouslySetInnerHTML={{ __html: content }}
         ></p>
-        {/* <AdBanner
-          data-ad-slot="5032371185"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        /> */}
+        
+        <div className={style.tagContainer}>
+          {arrayoftags && arrayoftags.map((value, index) => (
+            <Tag text={value} key={index}/>
+          ))}
+        </div>
 
         <h3>Comment Section </h3>
         <section className={style.commentSection}>
           <div className={style.viewComments}>
-            {AllComments && AllComments.map((data) => <SingleComment data={data} />)}
+            {AllComments && AllComments.map((data, index) => (
+              <SingleComment data={data} key={index} />
+            ))}
           </div>
 
           <div className={style.uploadNewC}>
@@ -191,7 +160,7 @@ const Blog = (props) => {
               <button
                 onClick={async (e) => {
                   if (!token) {
-                    localStorage.setItem("PreviousPath",urlpart);
+                    localStorage.setItem("PreviousPath", urlpart);
                     router.push("/accounts/signup");
                   }
 
@@ -203,13 +172,11 @@ const Blog = (props) => {
                     `${process.env.NEXT_PUBLIC_BASE_URL}/api/comments/uploadcomment`,
                     Comment
                   );
-                  enqueueSnackbar("Comment Added",{variant:"success"})
+                  enqueueSnackbar("Comment Added", { variant: "success" });
                   const data = res.data;
                   const username = data.username;
 
                   setAllComments([...AllComments, { username, message: Comment.message }]);
-
-                 
                   setComment({ ...Comment, message: "" });
                   e.target.innerText = "Post";
                 }}
@@ -221,32 +188,15 @@ const Blog = (props) => {
         </section>
       </main>
 
-      {/* Related Blogs */}
       {props.data.rem.length > 0 && (
         <section className={style.suggestionparent}>
-          <p
-            className={`${style.sphead} ${isDarkMode ? style.darkSpHead : ""}`}
-          >
+          <p className={`${style.sphead} ${isDarkMode ? style.darkSpHead : ""}`}>
             You Might Want to Read{" "}
           </p>
           <div className={style.rContainer}>
             {props.data.rem.map((value, index) => (
               <Sbc data={value} key={index} />
             ))}
-            {/* {!isMobile && (
-              <>
-                <AdBanner
-                  data-ad-slot="5032371185"
-                  data-ad-format="auto"
-                  data-full-width-responsive="true"
-                />
-                <AdBanner
-                  data-ad-slot="5032371185"
-                  data-ad-format="auto"
-                  data-full-width-responsive="true"
-                />
-              </>
-            )} */}
           </div>
         </section>
       )}
@@ -255,14 +205,12 @@ const Blog = (props) => {
 };
 
 export async function getServerSideProps(context) {
-  // Fetch data from external API
   const { query } = context;
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/blog/${query.title}`
   );
   const data = await res.json();
 
-  // Pass data to the page via props
   return {
     props: {
       data,

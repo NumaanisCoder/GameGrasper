@@ -14,7 +14,8 @@ const id = (props) => {
     const [formValues, setformValues] = useState({
         title: props.data.blog.title,
         content: props.data.blog.content,
-        summary: props.data.blog.summary
+        summary: props.data.blog.summary,
+        tags: props.data.tags || ""
       });
       const handleChange = (e) => {
         const {value, name} = e.target;
@@ -61,12 +62,13 @@ const id = (props) => {
         formData.set("title", formValues.title);
         formData.set("summary", formValues.summary);
         formData.set("content", formValues.content);
+        formData.set("tags", formValues.tags);
         formData.set("image", file);
         const res = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/updateblog`,formData);
         const data = res.data;
         if (data.progress) {
           setSubmitButton("Updated");
-          router.push("/admin/root2103Nn");
+          router.push("/admin/root");
         }
       };
   return (
@@ -124,6 +126,19 @@ const id = (props) => {
               required
               value={formValues.summary}
             ></textarea>
+          </div>
+
+          <div className={`${style.formGroup} ${isDarkMode ? style.darkFG : ""}`}>
+            <label className={style.formLabel} htmlFor="tags">
+              Tags (comma separated)
+            </label>
+            <input
+              type="text"
+              name="tags"
+              onChange={handleChange}
+              value={formValues.tags}
+              required
+            />
           </div>
          
           <div className={style.formGroup}>

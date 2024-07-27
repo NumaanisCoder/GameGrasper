@@ -42,8 +42,8 @@ const handler = async (req, res) => {
             await blog.save();
 
             // Cache the fetched data with a TTL (time-to-live) of 5 hours (18000 seconds)
-            cache.set(newTitle3, blog, 60 * 2);
-            cache.set(`${newTitle3}_rem`, relatedBlogs.slice(0, 3), 60 * 2);
+            cache.set(newTitle3, blog, 1);
+            cache.set(`${newTitle3}_rem`, relatedBlogs.slice(0, 3), 1);
 
             // Return the fetched data
             res.status(200).json({ message: blog, rem: relatedBlogs.slice(0, 3) });

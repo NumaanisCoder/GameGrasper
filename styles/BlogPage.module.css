@@ -276,6 +276,12 @@
     transform: scale(.95);
     opacity: .9;
 }
+.tagContainer{
+    padding: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
 
 @media (max-width: 580px) {
     .blogimage {

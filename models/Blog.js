@@ -22,6 +22,10 @@ const blogSchema = new Schema({
   summary: {
     type: String,
   },
+  tags: {
+    type: String, 
+    required: [true, "Blog tags are required"]
+  },
   createdAt: {
     type: Number,
     default: Date.now(),

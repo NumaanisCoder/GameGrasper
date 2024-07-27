@@ -30,9 +30,9 @@ export default async function handler(req, res) {
           return res.status(500).json({ message: "Internal server error." });
         }
         
-        const {id, title, content, summary, category } = req.body;
+        const {id, title, content, summary, category,tags } = req.body;
        
-
+        console.log(req.body);
         // Perform database operations, e.g., save data to MongoDB
         if(req.file){
             const imagefile = req.file;
@@ -40,9 +40,9 @@ export default async function handler(req, res) {
               imagefile.buffer,
               imagefile.originalname
             );
-            await Blog.findByIdAndUpdate(id,{title,image,content,summary,category});
+            await Blog.findByIdAndUpdate(id,{title,image,content,summary,category,tags});
         }else{
-            await Blog.findByIdAndUpdate(id,{title,content,summary,category});
+            await Blog.findByIdAndUpdate(id,{title,content,summary,category,tags});
         }
 
         return res

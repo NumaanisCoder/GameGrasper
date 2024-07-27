@@ -181,6 +181,18 @@ const Admin = (props) => {
               required
             ></textarea>
           </div>
+
+          <div className={`${style.formGroup} ${isDarkMode ? style.darkFG : ""}`}>
+            <label className={style.formLabel} htmlFor="tags">
+              Tags (comma separated)
+            </label>
+            <input
+              type="text"
+              name="tags"
+              onChange={handleChange}
+              required
+            />
+          </div>
          
           <div className={`${style.formGroup} ${isDarkMode ? style.darkFG : ""}`}>
             <button className={style.submitButton}>{SubmitButton}</button>

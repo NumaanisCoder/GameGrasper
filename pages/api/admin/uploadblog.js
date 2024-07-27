@@ -29,7 +29,8 @@ export default async function handler(req, res) {
         } else if (err) {
           return res.status(500).json({ message: "Internal server error." });
         }
-        const { title, content, summary, category } = req.body;
+        const { title, content, summary, category,tags } = req.body;
+        
         const imagefile = req.file;
         const image = await uploadImage(
           imagefile.buffer,
@@ -37,7 +38,7 @@ export default async function handler(req, res) {
         );
 
         // Perform database operations, e.g., save data to MongoDB
-        const blog = new Blog({ title, content, summary, category, image });
+        const blog = new Blog({ title, content, summary, category, image,tags });
         await blog.save();
 
         return res
