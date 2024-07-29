@@ -10,13 +10,11 @@ function tag(props) {
     const router  = useRouter();
     const tag = router.query.tag;
 
-   
-
 
     return (
 
         <div className={style.root}>
-            <h2>Tag is <span>{tag}</span></h2>
+            <h2>:=<span>{tag}</span>=:</h2>
                    <div className={style.blogcontainer}>
             {TagBlogs && TagBlogs.map((value, index) => (
                 <BlogCard data={value} key={index} />
