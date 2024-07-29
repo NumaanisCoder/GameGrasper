@@ -1,0 +1,27 @@
+.root {
+    background-color: black;
+    min-height: 85vh;
+}
+
+.root > h2 {
+    text-align: center;
+    margin-top: 60px;
+    color: white;
+    padding-top: 20px;
+}
+
+.root > h2 > span {
+    background-color: gray;
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.blogcontainer {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+}
