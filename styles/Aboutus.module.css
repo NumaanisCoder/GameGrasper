@@ -4,11 +4,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    background: #181818;
+    color: black;
+    background: white;
 }
 .rootkabaap.dark{
-    background-color: black;
+    background-color: #181818;
     color: white;
 }
 

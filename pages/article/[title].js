@@ -153,7 +153,7 @@ const Blog = (props) => {
                 onChange={(e) => {
                   setComment({ ...Comment, message: e.target.value });
                 }}
-                className={style.commentTextArea}
+                className={`${style.commentTextArea} ${isDarkMode ? style.DcommentTextArea : ""}`}
                 cols="20"
                 rows="5"
                 required
@@ -190,7 +190,7 @@ const Blog = (props) => {
       </main>
 
       {props.data.rem.length > 0 && (
-        <section className={style.suggestionparent}>
+        <section className={`${style.suggestionparent} ${isDarkMode ? style.darksp : ""}`}>
           <p className={`${style.sphead} ${isDarkMode ? style.darkSpHead : ""}`}>
             You Might Want to Read{" "}
           </p>

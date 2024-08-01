@@ -7,20 +7,21 @@
     padding: 6px;
     transition: all 300ms linear;
     font-family: 'Roboto', sans-serif;
-    background: black;
+    background: transparent;
     transition: all .4s;
     /* box-shadow: 1px 1px 2px black; */
-    border-radius: 6px;
-    border-radius: 0;
-    color: white;
-    border-bottom: 3px solid rgb(220, 63, 20);;
+    border-radius: 8px;
+ 
+    color: black;
+    box-shadow: 1px 1px 2px orangered;
+    border-bottom: 1px solid rgb(220, 63, 20);
     
     
 }
 .parent.dark{
+    color: white;
     background: black;
     border-radius: 0;
-    border-bottom: 2px solid white;
 }
 
 
@@ -31,7 +32,7 @@
 
 }
 .parent:hover{
-    border-color: red;
+    border-color: pink;
 }
 
 .imageC{
