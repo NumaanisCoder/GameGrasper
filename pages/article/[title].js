@@ -130,7 +130,7 @@ const Blog = (props) => {
           ))}
         </div>
 
-        <h3>Comment Section </h3>
+        <h3 className={style.commentSecTitle}>Comment Section </h3>
         <section className={style.commentSection}>
           <div className={style.viewComments}>
             {AllComments && AllComments.map((data, index) => (
@@ -145,7 +145,7 @@ const Blog = (props) => {
                 e.preventDefault();
               }}
             >
-              <label className={style.labelComment} htmlFor="comment"></label>
+          
               <textarea
                 name="comment"
                 value={Comment.message}

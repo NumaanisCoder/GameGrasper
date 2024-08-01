@@ -201,7 +201,11 @@
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
+}
+.commentSecTitle{
+    margin-left: 10px;
+    margin-top: 30px;
 }
 
 .viewComments{
@@ -225,32 +229,14 @@
     gap: 10px;
 }
 
-.labelComment{
-    position: relative;
-}
-.labelComment::before{
-    content: "Comment";
-    position: absolute;
-    top: -28px;
-    left: 22px;
-    color: rgb(220, 63, 20);
-    z-index: 1;
-    padding: 5px 8px;
-    box-sizing: border-box;
-    transition: 0.3s ease;
-    border-radius: 6px;
-    border: 1px solid rgb(220, 63, 20);
-    border-bottom: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    background-color: black;
-}
 
 .commentTextArea{
     outline: none;
     font-family: 'Roboto', sans-serif;
     padding: 10px;
     border-radius: 6px;
+    width: 70%;
+    max-width: 400px;
     color: white;
     background-color: black;
     border: 1px solid orangered;
