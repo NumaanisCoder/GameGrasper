@@ -54,7 +54,7 @@
     margin-top: 80px;
     box-sizing: border-box;
     padding: 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'blogfont';
     align-items: center;
     gap: 20px;
     margin-bottom: 50px;
@@ -139,7 +139,7 @@
 }
 
 .content {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'blogfont', sans-serif;
     margin-top: 40px;
     white-space: pre-line;
     line-height: 25px;
