@@ -21,6 +21,8 @@ const signup = () => {
   
 
   const {enqueueSnackbar, closeSnackbar} = useSnackbar();
+  const isDarkMode = useSelector(state => state.theme.isDarkMode);
+
 
   const router = useRouter();
 
