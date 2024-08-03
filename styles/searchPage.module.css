@@ -1,6 +1,10 @@
 .parent{
     min-height: 100vh;
+    background: #f2f2f2;
+}
+.darkParent{
     background: #181818;
+
 }
 
 .searchContainer{
@@ -9,18 +13,29 @@ display: flex;
 
 }
 
+
 .searchInput{
     margin-top: 100px;
     width: 50rem;
     background-color: transparent;
     border: none;
     border-bottom: 2px solid red;
-    padding: 10px 15px;
+    padding: 15px 25px;
     outline: 0;
-    color: white;
-    font-size: 20px;
+    color: black;
+    font-size: 18px;
     caret-color: red;
+    height: 50px;
+    box-shadow: 2px 2px 4px orangered;
 }
+.darkSearchInput{
+    background-color: black;
+    color: white;
+}
+.darkSearchInput::placeholder{
+    color: orangered;
+}
+
 
 .blogContainer{
     margin-top: 15px;
@@ -30,4 +45,13 @@ display: flex;
     align-items: center;
     gap: 6px;
 
+}
+
+
+@media (max-width: 500px) {
+
+    .searchInput{
+        width: 22rem;
+    }
+    
 }

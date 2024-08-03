@@ -155,9 +155,7 @@ ol > li::marker{
   font-weight: bold;
   color: rgb(220, 63, 20);
 }
-input::placeholder{
-  color: white;
-}
+
 
 code{
     max-width: 100%;

@@ -11,11 +11,14 @@ const provider = new GoogleAuthProvider();
 
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useSnackbar } from "notistack";
+import { useSelector } from 'react-redux';
 
 
 
 
 const signup = () => {
+
+  
 
   const {enqueueSnackbar, closeSnackbar} = useSnackbar();
 
@@ -76,9 +79,12 @@ signInWithPopup(auth, provider)
         }
 
     }
+
+
+
   return (
-    <div className={style.root}>
-      <form className={style.form} onSubmit={formHandler}>
+    <div className={`${style.root} ${isDarkMode ? style.darkRoot : ""}`}>
+      <form  className={style.form} onSubmit={formHandler}>
         <div className={style.formGroup}>
         <h1>Sign up</h1>
         </div>

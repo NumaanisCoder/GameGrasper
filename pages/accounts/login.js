@@ -15,10 +15,14 @@ const provider = new GoogleAuthProvider();
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import { useSnackbar } from "notistack";
+import { useSelector } from "react-redux";
 
 
 const signup = () => {
   const {enqueueSnackbar, closeSnackbar} = useSnackbar();
+  const isDarkMode = useSelector(state => state.theme.isDarkMode);
+
+
 
 
 
@@ -114,7 +118,7 @@ router.back();
 
 
   return (
-    <div className={style.root}>
+    <div className={`${style.root} ${isDarkMode ? style.darkRoot : ""}`}>
       <form
         autoComplete="off"
         autoSave="off"
