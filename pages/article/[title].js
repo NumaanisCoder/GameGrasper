@@ -120,7 +120,7 @@ const Blog = (props) => {
         )}
 
         <p
-          className={style.content}
+          className={`${style.content} ${isDarkMode ? style.darkContent : ""}`}
           dangerouslySetInnerHTML={{ __html: content }}
         ></p>
         
