@@ -315,6 +315,28 @@
     font-weight: bold;
 }
 
+.progressBarContainer {
+    position: fixed;
+    z-index: 999990;
+    background: black;
+    width: 100%;
+    top: 60px;
+    left: 0;
+}
+  
+  
+.progressBar {
+    background: orangered;
+    transform-origin: top left;
+    transform: scale(0,0);
+    opacity: 100;
+}
+
+.progressBarContainer,
+.progressBar {
+    height: 10px;
+}
+
 @media (max-width: 580px) {
     .blogimage {
         min-height: 200px;
@@ -322,6 +344,12 @@
         border-radius: 6px;
         margin: 10px auto;
         
+    }
+    .progressBarContainer{
+        top: 70px;
+    }
+    .progressBar{
+        height: 6px;
     }
 
     .content {

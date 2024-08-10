@@ -44,7 +44,7 @@ const Blog = (props) => {
   const emoji = getEmoji(category);
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
   const [isMobile, setIsMobile] = useState(false);
-
+  const [scroll, setScroll] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -53,6 +53,18 @@ const Blog = (props) => {
 
     handleResize();
     window.addEventListener("resize", handleResize);
+
+
+    let progressBarHandler = () => {
+            
+      const totalScroll = document.documentElement.scrollTop;
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scroll = `${totalScroll / windowHeight}`;
+
+      setScroll(scroll);
+  }
+
+  window.addEventListener("scroll", progressBarHandler);
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -87,6 +99,10 @@ const Blog = (props) => {
         <meta name="twitter:image:alt" content={image} />
         <meta name="twitter:card" content={summary} />
       </Head>
+
+      <div className={style.progressBarContainer}>
+        <div className={style.progressBar} style={{transform: `scale(${scroll}, 1)`}}></div>
+      </div>
 
       <main className={`${style.parent} ${isDarkMode ? style.darkp : ""}`}>
         <div className={style.metaInfo}>
