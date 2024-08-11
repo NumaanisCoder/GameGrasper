@@ -15,18 +15,15 @@
 }
 
 .form{
+
     margin-top: 20px;
     color: white;
     padding: 15px 25px;
-   
-    /* background: linear-gradient(to bottom, black 50%, rgb(220, 63, 20) 50%);
-     */
-     background-color: black;
-    
+    background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    gap: 10px;
     clip-path: circle(10% at 0% 0%);
     transition: clip-path 3s linear;
     clip-path: stroke-box;
@@ -56,7 +53,7 @@
 .formGroup input{
     width: 80%;
     border: none;
-    height: 2.8rem;
+    height: 40px;
     padding: 0 0 0 15px;
     color: white;
     border: 0.5px solid rgb(220, 63, 20);
@@ -65,7 +62,6 @@
     outline: none;
     box-sizing: border-box;
    
-
 }
 .formGroup input:focus{
     border: 2px solid rgb(220, 63, 20);
