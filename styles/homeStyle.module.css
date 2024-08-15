@@ -43,7 +43,7 @@
 }
 
 .lbctitle{
-  z-index: 1000;
+  z-index: 2;
   font-family: 'blogfont';
   font-size: 36px;
   position: relative;
