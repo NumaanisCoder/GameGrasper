@@ -34,7 +34,7 @@ const handler = async (req, res) => {
     const restBlogs = allBlogs.slice(4, 14); // Remaining blogs
 
     // Cache the separated data with a TTL (time-to-live) of 30 minutes (1800 seconds)
-    cache.set("blogs", { latestBlog, nextThreeBlogs, restBlogs, mostViewedBlog }, 60 * 30);
+    cache.set("blogs", { latestBlog, nextThreeBlogs, restBlogs, mostViewedBlog }, 60 * 2);
 
     // Return the separated data
     res.status(200).json({ latestBlog, nextThreeBlogs, restBlogs, mostViewedBlog });
