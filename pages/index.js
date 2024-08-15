@@ -40,8 +40,9 @@ const Index = (props) => {
         <div className={style.blogContainer}>
 
           <Link href={getURL(latestBlog)} className={style.latestBlogCard}>
-            <img className={style.lbcimage} src={latestBlog.image} alt="" srcset="" />
+            <div className={style.lbcimage} style={{backgroundImage: `url(${latestBlog.image})`}}>
             <p className={style.lbctitle}>{latestBlog.title}</p>
+            </div>
           </Link>
 
           <div className={`${style.nextBlogContainer} ${isDarkMode ? style.nBCBlack : ""}`}>

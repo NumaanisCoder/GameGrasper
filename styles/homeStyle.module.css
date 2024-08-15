@@ -28,21 +28,26 @@
   width: 70%;
   box-sizing: border-box;
   height: fit-content;
+  height: 100%;
 
 }
 .lbcimage{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
-  object-fit: contain;
+  height: 97%;
   border-radius: 12px;
-  height: fit-content;
+  aspect-ratio: 16/9;
+  object-fit: contain;
 }
 
 .lbctitle{
+  z-index: 1000;
   font-family: 'blogfont';
+  font-size: 36px;
   position: relative;
-  bottom: 120px;
-  left: 19px;
-  font-size: 45px;
+  top: 80%;
   font-weight: 800;
   color: white;
   padding: 10px;
@@ -190,10 +195,9 @@ align-items: center;
     
   }
   
-  .latestBlogCard > p{
-    font-size: 30px;
-    left: 8px;
-    bottom: 90px;
+  .lbctitle{
+    font-size: 22px;
+    top: 72%;
   }
   .nextBlogContainer{
     margin: 0;
@@ -209,9 +213,6 @@ align-items: center;
   }
   .blogCard > img{
     object-fit: contain;
-  }
-  .lbctitle{
-    font-size: 32px;
   }
   .nextBlogContainer{
     width: 100%;
