@@ -14,17 +14,30 @@ const handler = async (req, res) => {
     const cachedData = cache.get("blogs");
     if (cachedData) {
       // If cached data is available, return it directly
-      return res.status(200).json({ message: cachedData });
+      return res.status(200).json(cachedData);
     }
 
     // If cached data is not available, fetch from the database
-    const Blogs = await Blog.find({}).sort({ _id: -1 }).exec();
+    const allBlogs = await Blog.find({}).sort({ _id: -1 }).exec();
 
-    // Cache the fetched data with a TTL (time-to-live) of 1 hour (3600 seconds)
-    cache.set("blogs", Blogs, 60*30);
+    const all = await Blog.find({}).sort({views: -1}).exec();
+    const mostViewedBlog = all.slice(0,4);
 
-    // Return the fetched data
-    res.status(200).json({ message: Blogs });
+    // Check if there are blogs available
+    if (allBlogs.length === 0) {
+      return res.status(404).json({ error: "No blogs found" });
+    }
+
+    // Separate the blogs into latest, next three, and the rest
+    const latestBlog = allBlogs[0]; // The latest blog
+    const nextThreeBlogs = allBlogs.slice(1, 4); // Next 3 latest blogs
+    const restBlogs = allBlogs.slice(4, 14); // Remaining blogs
+
+    // Cache the separated data with a TTL (time-to-live) of 30 minutes (1800 seconds)
+    cache.set("blogs", { latestBlog, nextThreeBlogs, restBlogs, mostViewedBlog }, 60 * 30);
+
+    // Return the separated data
+    res.status(200).json({ latestBlog, nextThreeBlogs, restBlogs, mostViewedBlog });
   } catch (error) {
     console.error("Error fetching blogs:", error);
     res.status(500).json({ error: "Internal server error" });

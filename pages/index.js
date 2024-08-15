@@ -4,44 +4,24 @@ import style from "@/styles/homeStyle.module.css";
 import Head from "next/head";
 import { useSelector } from "react-redux";
 import ThemeButton from "@/components/ToggelTheme/ThemeButton";
+import Link from "next/link";
 
 
 
 const Index = (props) => {
+  const latestBlog = props.data.latestBlog;
+  const Next3Blog = props.data.nextThreeBlogs;
+  const mostViewd = props.data.mostViewedBlog;
+  const restBlogs = props.data.restBlogs;
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
-  const [currentPage, setcurrentPage] = useState(1);
-  const itemsperpage = 15;
-  const startIndex = 0;
-  const endIndex = currentPage * itemsperpage;
 
-  const handleScroll = () => {
-    // Calculate the position of the scroll bar
-    const scrollPosition = window.innerHeight + window.scrollY;
-    const pageHeight = document.documentElement.scrollHeight;
+  function getURL(blog){
+    const encrypturl = blog.title.replace(/-/g, '~');
+    const questionmark = encrypturl.replace(/\?/g, '$');
+    const urlpart = `/article/${questionmark.replace(/ /g, '-')}`;
+    return urlpart;
+  }
 
-    // Adjust the threshold as needed, for example, 300px from the bottom
-    const threshold = 450;
-
-    // Check if the user has scrolled to the bottom of the page
-    if (
-      scrollPosition >= pageHeight - threshold &&
-      endIndex < props.data.message.length
-    ) {
-      // Load more blogs
-      console.log("It is bottom");
-      setcurrentPage((prevPage) => prevPage + 1);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-
-    return () => {
-
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [currentPage]);
 
   return (
     <div>
@@ -55,15 +35,55 @@ const Index = (props) => {
       </Head>
       <div className={` ${style.parent} ${isDarkMode ? style.dark : ""} `}>
 
-  
-      
-        <div className={style.blogcontainer}>
-  
-          {props.data.message.slice(startIndex, endIndex).map((blog, index) => (
-            <BlogCard data={blog} key={index} />
-            
-          ))}
+
+
+        <div className={style.blogContainer}>
+
+          <Link href={getURL(latestBlog)} className={style.latestBlogCard}>
+            <img className={style.lbcimage} src={latestBlog.image} alt="" srcset="" />
+            <p className={style.lbctitle}>{latestBlog.title}</p>
+          </Link>
+
+          <div className={`${style.nextBlogContainer} ${isDarkMode ? style.nBCBlack : ""}`}>
+            <h2>Latest Blogs</h2>
+            {Next3Blog.map((value, key) =>
+              <Link href={getURL(value)} className={`${style.blogCard} ${isDarkMode ? style.blackBlogCard : ""}`}>
+                <p>{value.title}</p>
+                <img src={value.image} alt="" />
+              </Link>
+            )}
+          </div>
+
         </div>
+
+
+        <div className={style.mostViewBlogParent}>
+
+          <h3>Trending</h3>
+
+          <div className={style.mostViewBlogContainer}>
+            {mostViewd && mostViewd.map((value, key) =>
+
+              <Link href={getURL(value)} className={`${style.verticleBlogCard} ${isDarkMode ? style.DarkverticleBlogCard : ""}`}>
+                <img src={value.image} alt="" srcset="" />
+                <p>{value.title}</p>
+              </Link>)}
+          </div>
+
+        </div>
+
+        <div className={style.RestBlogParent}>
+          <h3>Recent Blogs</h3>
+          <div className={style.RestBlogContainer}>
+
+            {restBlogs.map((value, key) =>
+              <BlogCard data={value} />
+            )}
+
+          </div>
+        </div>
+
+
       </div>
     </div>
   );

@@ -67,10 +67,7 @@ const urlpart = `/article/${questionmark.replace(/ /g, '-')}`;
         <p className={styles.content}>{removeHtmlTags(summary)}....</p>
         <div className={styles.linkCategoryDiv}>
           <p className={`${styles.Link} ${isDarkMode ? styles.darkLink : ""}`}>
-            <Link onClick={()=> enqueueSnackbar("Noiceee", {
-        autoHideDuration: 2000,
-        variant: "error",
-      })} href={urlpart}>Read</Link>
+            <Link href={urlpart}>Read</Link>
           </p>
           
         </div>

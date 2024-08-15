@@ -1,15 +1,15 @@
 .container {
     display: grid;
     grid-template-rows: auto auto;
-    width: 24rem;
-    background-color: #f6f6f6;
+    width: 100%;
+    background-color: white;
     box-sizing: border-box;
     padding: 6px;
     color: black;
     border-radius: 6px;
     row-gap: 2px;
     font-family: 'Roboto', sans-serif;
-    
+    box-shadow: 1px 1px 2px gray; 
 }
 
 .dark {
@@ -32,7 +32,7 @@
 
 .title {
     font-family: "Ubuntu", sans-serif;
-    font-size: large;
+    font-size: 22px;
     box-sizing: border-box;
     padding: 2px 6px;
     text-align: left;
@@ -51,7 +51,7 @@
     color: gray;
     margin-top: 10px;
     line-height: 22px;
-    font-size: 17px;
+    font-size: 16px;
     padding: 4px 6px;
 }
 
@@ -143,7 +143,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f6f6f6;
+    background-color: white;
     box-sizing: border-box;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
@@ -186,7 +186,6 @@
 
 @media (min-width: 700px) and (max-width: 1200px) {
     .container {
-        width: 30rem;
         height: min-content;
         overflow: hidden;
         transition: all 300ms linear;
@@ -197,14 +196,13 @@
     .container {
         grid-template-columns: 1fr 2.3fr;
         grid-template-rows: none;
-        width: 55rem;
         height: min-content;
         overflow: hidden;
         transition: all 300ms linear;
     }
 
     .Link>a {
-        font-size: 20px;
+        font-size: 12px;
     }
 
     .image_container {
@@ -214,12 +212,11 @@
     }
 
     .content {
-        line-height: 24px;
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .title {
-        font-size: 26px;
+        font-size: 20px;
     }
 
     .username {
@@ -234,7 +231,7 @@
     }
 
     .views {
-        font-size: medium;
+        font-size: 14px;
     }
 
     .text_container {
