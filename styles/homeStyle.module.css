@@ -72,7 +72,7 @@
 
 }
 .nBCBlack{
-  background-color: black;
+  background-color: #171D1C;
   color: white;
 }
 .nextBlogContainer > h2{
@@ -90,7 +90,7 @@
 }
 .blackBlogCard{
   color: white;
-  background-color: black;
+  background-color: #171D1C;
 }
 .blogCard > p{
   padding: 0 10px;
@@ -132,13 +132,13 @@ border-radius: 10px;
  flex-direction: column;
  align-items: center;
  justify-content: center;
-  background-color: white;
+ background-color: #EFF2F1;
   font-family: 'blogfont';
   border-bottom: 2px solid black;
   max-height: fit-content;  
 }
 .DarkverticleBlogCard{
-  background-color: black;
+  background-color: #171D1C;
   color: white;
   border-bottom: 2px solid white;
 }
