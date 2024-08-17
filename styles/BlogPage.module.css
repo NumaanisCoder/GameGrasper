@@ -108,13 +108,13 @@
 }
 
 .title {
-    font-family: "Blogfont", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
+    font-family: 'TitleFont';
+    font-weight: 700;
     font-style: normal;
     text-align: left;
     padding: 5px;
-    font-size: 38px;
+    font-size: 58px;
+    line-height: 50px;
 }
 
 .metap {
@@ -145,7 +145,7 @@
 }
 
 .content {
-    font-family: "Blogfont", sans-serif;
+    font-family: "Rufina", serif;
     font-weight: 400;
     font-optical-sizing: auto;
     margin-top: 40px;
@@ -161,19 +161,18 @@
     font-size: 18px;
 }
 .content h2{
-   font-family: "Ubuntu", sans-serif;
+    font-family: 'TitleFont';
    width: fit-content;
    color: rgb(203, 54, 0);
    border-bottom: 2px solid rgb(220, 63, 20) ;
-   padding: 8px;
+  
 }
 .content h3{
-    font-family: "Ubuntu", sans-serif;
+    font-family: 'TitleFont';
    font-size: 700;
    text-decoration: underline;
    /* text-shadow: 1px 1px 1px blue; */
    width: fit-content;
-   padding: 4px;
    color: #008080;
    font-weight: 500;
    border-radius: 10px;
@@ -365,7 +364,8 @@
     }
 
     .title {
-        font-size: x-large;
+        font-size: 35px;
+        line-height: 35px;
     }
 
     .subimage {
@@ -403,6 +403,10 @@
 
     .backLinksC::-webkit-scrollbar {
         width: 0;
+    }
+
+    .content h3{
+        font-size: 30px;
     }
 }
 @media (min-width: 580px) and (max-width: 1080px) {

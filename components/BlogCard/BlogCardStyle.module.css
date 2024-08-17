@@ -74,7 +74,7 @@
     border: none;
     border-radius: 0px;
     padding: 6px 8px;
-    border-left: 8px solid rgb(220, 63, 20);
+    border-left: 8px solid red;
     width: fit-content;
     font-weight: 400;
     background-color: black;
