@@ -161,9 +161,12 @@ ol{
   list-style-position: inside;
 }
 ol > li::marker{
-  content: '[' counter(list-item) ']';
+  font-family: 'TitleFont';
+  content:  counter(list-item) ') ';
   font-weight: bold;
+  font-size: 19px;
   color: rgb(220, 63, 20);
+  background-color: yellow;
 }
 
 

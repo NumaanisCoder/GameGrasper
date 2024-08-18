@@ -164,7 +164,7 @@
     font-family: 'TitleFont';
    width: fit-content;
    color: rgb(203, 54, 0);
-   border-bottom: 2px solid rgb(220, 63, 20) ;
+   border-bottom: 2px solid red ;
   
 }
 .content h3{
@@ -192,7 +192,7 @@
     color: #00d8d8;
 }
 .darkContent h4{
-    color: #FFE066;
+    color: red;
 }
 .darkContent li strong{
     color: #DAE2DF;
@@ -215,16 +215,19 @@
 }
 
 .sphead {
+    font-family: 'TitleFont'; /* Choose a name for your custom font */
     box-sizing: border-box;
     width: fit-content;
-    background-color: black;
-    color: white;
     padding: 10px;
     border-radius: 6px;
     margin-left: 12px;
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-color: red;
+    line-height: 10px;
 }
 .sphead.darkSpHead{
-    background-color: rgb(220, 63, 20) ;
+   color: white;
 }
 
 
@@ -238,7 +241,10 @@
 .commentSecTitle{
     margin-left: 10px;
     margin-top: 30px;
-    font-family: "Ubuntu", sans-serif;
+    font-family: 'TitleFont'; /* Choose a name for your custom font */
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-color: red;
 }
 
 .viewComments{
@@ -273,8 +279,8 @@
     max-width: 400px;
     color: black;
     background-color: #f2f2f2;
-    box-shadow: 1px 1px 2px orangered;
-    border: 1px solid orangered;
+    box-shadow: 1px 1px 2px red;
+    border: 1px solid red;
 }
 .commentTextArea.DcommentTextArea{
     background-color: black;
@@ -284,17 +290,19 @@
     color: white;
 }
 .formGroup > button{
+    font-family: 'TitleFont'; /* Choose a name for your custom font */
     width: max-content;
     height: max-content;
     padding: 8px 16px;
+    font-size: 16px;
     border: none;
     border-radius: 6px;
-    background-color: rgb(220, 63, 20) ;
+    background-color: red ;
     color: white;
     font-weight: bolder;
     text-transform: uppercase;
     transition: transform .2s linear;
-    box-shadow: 1px 1px 2px orangered;
+    box-shadow: 1px 1px 3px black;
 
 }
 .formGroup > button:hover{
@@ -303,10 +311,12 @@
     opacity: .9;
 }
 .tagContainer{
-    padding: 10px;
+    padding: 5px;
     display: flex;
     justify-content: start;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
     font-family: "Ubuntu", sans-serif;
 }
 .tagContainer span{
@@ -325,7 +335,7 @@
   
   
 .progressBar {
-    background: orangered;
+    background: red;
     transform-origin: top left;
     transform: scale(0,0);
     opacity: 100;

@@ -208,7 +208,7 @@ const Blog = (props) => {
       {props.data.rem.length > 0 && (
         <section className={`${style.suggestionparent} ${isDarkMode ? style.darksp : ""}`}>
           <p className={`${style.sphead} ${isDarkMode ? style.darkSpHead : ""}`}>
-            You Might Want to Read{" "}
+            Latest
           </p>
           <div className={style.rContainer}>
             {props.data.rem.map((value, index) => (

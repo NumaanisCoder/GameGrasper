@@ -32,17 +32,20 @@
 }
 
 .navLi>a {
+    font-family: 'TitleFont';
     color: white;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     padding: 7px 13px;
     text-transform: uppercase;
 }
 
 .navLi > a:hover{
-    background-color: rgb(220, 63, 20);
-    color: white;
+    background-color: red;
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: black;
     
 }
 

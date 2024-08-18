@@ -77,8 +77,12 @@
   color: white;
 }
 .nextBlogContainer > h2{
-  font-size: 30px;
+  font-size: 35px;
+  line-height: 25px;
   text-transform: uppercase;
+  font-family: 'TitleFont';
+  text-decoration: underline;
+  text-decoration-color: red; 
   
 }
 .blogCard{
@@ -119,6 +123,8 @@ border-radius: 10px;
   font-size: 45px ;
   font-weight: 400;
   margin-bottom: 10px;
+  text-decoration: underline;
+  text-decoration-color: red; 
 }
 
 .mostViewBlogContainer{
@@ -168,6 +174,8 @@ border-radius: 10px;
   font-size: 45px ;
   font-weight: 400;
   margin-bottom: 10px;
+  text-decoration: underline;
+  text-decoration-color: red; 
 }
 
 .RestBlogContainer{
@@ -203,15 +211,16 @@ align-items: center;
   .lbctitle{
     z-index: 2;
     font-family: 'TitleFont';
-    font-size: 26px;
+    font-size: 28px;
     line-height: 36px;
     position: relative;
-    top: 65%;
+    top: 68%;
     font-weight: 800;
     color: white;
     padding: 10px;
     width: 99%;
     text-shadow: 4px 3px 4px black;
+    line-height: 26px;
   }
   .nextBlogContainer{
     margin: 0;
