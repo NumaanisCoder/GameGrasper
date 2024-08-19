@@ -13,12 +13,13 @@
 }
 
 .dark {
-    background-color: transparent;
     color: white;
-    background-color: #101413;
-    box-shadow: none;
-    border: none;
-    box-shadow: 1px 1px 2px rgb(183, 183, 183); 
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Styling Text */
@@ -48,8 +49,8 @@
 }
 
 .content {
-    font-family: 'Roboto', sans-serif;
-    color: gray;
+    font-family: 'ContentFont';
+    color: rgb(70, 70, 70);
     margin-top: 10px;
     line-height: 22px;
     font-size: 16px;

@@ -15,6 +15,10 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { useSnackbar } from "notistack";
 import Tag from "@/components/tag/Tag";
+import SocialShare from "@/components/SocialShare";
+import { FaShare } from "react-icons/fa";
+
+
 
 const Blog = (props) => {
   const { enqueueSnackbar } = useSnackbar();
@@ -46,6 +50,10 @@ const Blog = (props) => {
   const [isMobile, setIsMobile] = useState(false);
   const [scroll, setScroll] = useState(0);
 
+    const encrypturl = title.replace(/-/g, '~');
+    const questionmark = encrypturl.replace(/\?/g, '$');
+    const urlpart = `/article/${questionmark.replace(/ /g, '-')}`
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 750);
@@ -74,8 +82,6 @@ const Blog = (props) => {
     return date.toUTCString();
   }
 
-  const encrypturl = title.replace(/-/g, "~");
-  const urlpart = `${process.env.NEXT_PUBLIC_BASE_URL}/article/${encrypturl.replace(/ /g, "-")}`;
 
   const arrayoftags = tags && tags.split(',').map(tag => tag.trim());
 
@@ -134,7 +140,9 @@ const Blog = (props) => {
             priority
           />
         )}
-
+        <div className={style.socialMediaContainer}>
+     <FaShare width={30}/> <SocialShare url={`https://www.gamegrasper.blog${urlpart}`} title={title}/>
+        </div>
         <p
           className={`${style.content} ${isDarkMode ? style.darkContent : ""}`}
           dangerouslySetInnerHTML={{ __html: content }}

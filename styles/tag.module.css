@@ -1,6 +1,9 @@
 .root {
     background-color: #f2f2f2;
     min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .root > h2 {
@@ -26,6 +29,15 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    width: 100%;
+    width: 70%;
     margin-bottom: 30px;
+}
+
+@media (max-width: 500px) {
+
+    .blogcontainer
+    {
+        width: 85%;
+    }
+    
 }

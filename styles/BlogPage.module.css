@@ -143,9 +143,18 @@
     width: 100%;
     object-fit: contain;
 }
+.socialMediaContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-transform: uppercase;
+    justify-content: end;
+    padding: 0px 20px;
+}
 
 .content {
-    font-family: "Rufina", serif;
+    font-family: 'ContentFont'; 
     font-weight: 400;
     font-optical-sizing: auto;
     margin-top: 40px;
@@ -179,6 +188,9 @@
 }
 .content a{
     color: blue;
+}
+.content em{
+    font-weight: 600;
 }
 
 .content li strong{
@@ -364,7 +376,8 @@
     .content {
         margin-top: 40px;
         line-height: 26px;
-        font-size: 18px;
+        font-size: 1.125rem;
+        line-height: 1.625rem;
         padding: 3px 10px 5px 2px;
         margin-left: 25px;
     }

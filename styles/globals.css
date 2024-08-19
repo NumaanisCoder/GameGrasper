@@ -13,6 +13,11 @@
   src: url('../JosefinSans-VariableFont_wght.ttf') format('woff'), /* Add each format of your font */
   /* Add more src lines if you have other font formats */
 }
+@font-face {
+  font-family: 'ContentFont'; /* Choose a name for your custom font */
+  src: url('../OpenSans.ttf') format('woff'), /* Add each format of your font */
+  /* Add more src lines if you have other font formats */
+}
 
 
 @font-face {
