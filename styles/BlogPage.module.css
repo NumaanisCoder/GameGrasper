@@ -358,6 +358,8 @@
     height: 10px;
 }
 
+
+
 @media (max-width: 580px) {
     .blogimage {
         min-height: 200px;

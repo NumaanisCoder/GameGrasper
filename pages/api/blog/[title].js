@@ -11,14 +11,10 @@ const cache = new NodeCache();
 const handler = async (req, res) => {
     try {
         const { query } = req;
-
-        console.log("Real query is ",query);
         const newTitle = query.title.replace(/-/g, " ");
         const newTitle2 = newTitle.replace(/~/g, '-');
         const newTitle3 = newTitle2.replace(/\$/g, '?');
         
-
-        console.log("My query is",newTitle3);
 
         // Check if the data is cached
         const cachedBlog = cache.get(newTitle3);

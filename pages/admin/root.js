@@ -9,6 +9,8 @@ import { toggelTheme } from "@/store/themeSlice";
 import Cookies from "js-cookie";
 import getFilterOptions from "@/lib/FilterProvider";
 import { useSnackbar } from "notistack";
+import MyChart from "@/components/MyChart";
+
 
 
 const Admin = (props) => {
@@ -255,6 +257,10 @@ const Admin = (props) => {
       <details className={style.div2}>
         <summary>Download Today Report</summary>
             <ExcelButton/>
+      </details>
+      <details className={style.ChartDIV}>
+        <summary>Top Blogs</summary>
+        <MyChart blogs={props.data.topBlogs}/>
       </details>
     </div>
   );
