@@ -31,6 +31,7 @@
   height: 100%;
 }
 .lbcimage{
+  position: relative;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -48,15 +49,14 @@
   z-index: 2;
   font-family: 'TitleFont';
   font-size: 50px;
-  line-height: 46px;
-  position: relative;
-  top: 75%;
+  line-height: 35px;
+  position: absolute;
+  bottom: 0;
   font-weight: 800;
   color: white;
   padding: 10px;
   width: 90%;
   text-shadow: 4px 3px 4px black;
-  
 }
 
 
@@ -296,8 +296,8 @@ align-items: center;
     font-family: 'TitleFont';
     font-size: 46px;
     line-height: 49px;
-    position: relative;
-    top: 76%;
+    position: absolute;
+    bottom: 0;
     font-weight: 800;
     color: white;
     padding: 10px;
