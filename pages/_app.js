@@ -80,14 +80,16 @@ export default function App({ Component, pageProps }) {
         ></script>
 
         {/* Google Adsense Code */}
-        {process.env.NEXT_PUBLIC_PRODUCTION ? (
+        {/* {process.env.NEXT_PUBLIC_PRODUCTION ? (
           <Script
             id="adsbygoogle-init"
             strategy="afterInteractive"
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4131180580860903"
           />
 
-        ) : null}
+        ) : null} */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4131180580860903"
+     crossorigin="anonymous"></script>
 
 
         {/* Adbloacker Script */}
