@@ -53,7 +53,6 @@ const NavBar = () => {
           Game<span>Grasper</span>
         </Link>
       </label>
-        <ThemeButton/>
       <ul className={`${style.navUl} ${isDarkMode ? style.darkUL : ''}`}>
         <li className={`${style.navLi} ${isDarkMode ? style.darkActive : ''}`}>
           <Link className={`${style.active}`} href="/search" onClick={menuProvider}>
