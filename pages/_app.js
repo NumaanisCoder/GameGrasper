@@ -92,12 +92,12 @@ export default function App({ Component, pageProps }) {
 
         {/* Adbloacker Script */}
 
-        <script
+        {/* <script
           async
           src="https://fundingchoicesmessages.google.com/i/pub-4131180580860903?ers=1"
           nonce="bANSMe-qXvls0bNz1Mb2Lg"
-        ></script>
-        <script
+        ></script> */}
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
@@ -118,7 +118,7 @@ export default function App({ Component, pageProps }) {
               })();
             `,
           }}
-        ></script>
+        ></script> */}
 
 
 
