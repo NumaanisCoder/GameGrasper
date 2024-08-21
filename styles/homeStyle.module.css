@@ -49,7 +49,7 @@
   z-index: 2;
   font-family: 'TitleFont';
   font-size: 50px;
-  line-height: 35px;
+  line-height: 38px;
   position: absolute;
   bottom: 0;
   font-weight: 800;
@@ -75,6 +75,7 @@
   background-color: #EFF2F1;
   height: max-content;
   border-radius: 6px;
+  box-shadow: 2px 2px 3px black;
 
 }
 .nBCBlack{
@@ -217,9 +218,9 @@ align-items: center;
     z-index: 2;
     font-family: 'TitleFont';
     font-size: 28px;
-    line-height: 36px;
-    position: relative;
-    top: 68%;
+    line-height: 38px;
+    position: absolute;
+    bottom: 0;
     font-weight: 800;
     color: white;
     padding: 10px;
