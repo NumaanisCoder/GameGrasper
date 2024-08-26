@@ -17,6 +17,8 @@ import { useSnackbar } from "notistack";
 import Tag from "@/components/tag/Tag";
 import SocialShare from "@/components/SocialShare";
 import { FaShare } from "react-icons/fa";
+import FollowUs from "@/components/FollowUs";
+
 
 
 
@@ -153,6 +155,12 @@ const Blog = (props) => {
             <Tag text={value} key={index}/>
           ))}
         </div>
+
+
+        <div className={style.socialMediaContainer}>
+        Follow us on <FollowUs/>
+        </div>
+        
 
         <h3 className={style.commentSecTitle}>Comment Section </h3>
         <section className={style.commentSection}>
