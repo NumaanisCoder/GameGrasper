@@ -74,6 +74,7 @@ export default function App({ Component, pageProps }) {
           name="google-site-verification"
           content="Ex6NfCMVOiD-FLDiWxV8-XsLlKokFwFIKGCJ_wPX4i8"
         />
+        <meta name="google-adsense-account" content="ca-pub-7924244776023495"></meta>
         <script
           src="https://kit.fontawesome.com/e283f5f527.js"
           crossorigin="anonymous"
@@ -88,7 +89,7 @@ export default function App({ Component, pageProps }) {
           />
 
         ) : null} */}
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4131180580860903"
+       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7924244776023495"
      crossorigin="anonymous"></script>
 
 
