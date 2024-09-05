@@ -226,11 +226,12 @@ table, td, th {
 }
 table{
   border: 2px solid black;
-  border-radius: 6px;
 }
 th{
   background-color: black;
   color: white;
+  padding: 5px;
+  font-family: 'TitleFont';
 }
 td{
   padding: 5px;
