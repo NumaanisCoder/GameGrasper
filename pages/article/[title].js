@@ -123,25 +123,16 @@ const Blog = (props) => {
           </p>
         </div>
 
-        {isMobile ? (
-          <Image
-            src={image}
-            className={style.blogimage}
-            width={400}
-            height={200}
-            alt={title}
-            priority
-          />
-        ) : (
-          <Image
-            src={image}
-            className={style.blogimage}
-            width={700}
-            height={500}
-            alt={title}
-            priority
-          />
-        )}
+        <Image
+  src={image}
+  className={style.blogimage}
+  alt={title}
+  layout="responsive"
+  width={700} // Width for aspect ratio (can be any values, Next.js will handle scaling)
+  height={500} // Height for aspect ratio
+  quality={65} // Adjust quality for faster loading
+  loading="lazy"
+/>
         <div className={style.socialMediaContainer}>
      <FaShare width={30}/> <SocialShare url={`https://www.gamegrasper.blog${urlpart}`} title={title}/>
         </div>
@@ -240,8 +231,11 @@ const Blog = (props) => {
 export async function getServerSideProps(context) {
   const { query } = context;
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/blog/${query.title}`
-  );
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/blog/${query.title}`, {
+      headers: {
+        'Cache-Control': 'public, max-age=86400, immutable',
+      }
+});
   const data = await res.json();
 
   return {

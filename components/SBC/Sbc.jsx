@@ -2,6 +2,7 @@ import React from 'react'
 import style from './Sbc.module.css';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
+import Image from 'next/image';
 
 const Sbc = ({data}) => {
     const isDarkMode = useSelector(state=> state.theme.isDarkMode);
@@ -15,12 +16,11 @@ const urlpart = `/article/${questionmark.replace(/ /g, '-')}`;
     <Link href={urlpart} className={`${style.parent} ${isDarkMode ? style.dark : ""}`}>
   
       <div className={style.imageC}>
-        <img src={image} alt="" />
+        <Image src={image}  width={50} height={50} layout='responsive' loading='lazy' alt={title} quality={50} />
       </div>
        
       <div className={style.info}>
         <h4>{title}</h4>
-        {/* <p>{removeHtmlTags(summary.substring(0,100))}</p> */}
       </div>
     </Link>
   )
