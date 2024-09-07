@@ -18,8 +18,7 @@ import Tag from "@/components/tag/Tag";
 import SocialShare from "@/components/SocialShare";
 import { FaShare } from "react-icons/fa";
 import FollowUs from "@/components/FollowUs";
-import BannerDesk from "@/components/BannerAdWeb";
-import BannerMobile from "@/components/BannerAd";
+
 
 
 
@@ -116,8 +115,7 @@ const Blog = (props) => {
   
 
       <main className={`${style.parent} ${isDarkMode ? style.darkp : ""}`}>
-      <BannerMobile/>
-      <BannerDesk/>
+      
         <div className={style.metaInfo}>
           <h1 className={style.title}>{title}</h1>
           <p className={style.metap}>
@@ -217,8 +215,7 @@ const Blog = (props) => {
             </form>
           </div>
         </section>
-        <BannerMobile/>
-      <BannerDesk/>
+      
       </main>
 
 
