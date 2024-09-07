@@ -113,6 +113,8 @@ const Blog = (props) => {
       <div className={style.progressBarContainer}>
         <div className={style.progressBar} style={{transform: `scale(${scroll}, 1)`}}></div>
       </div>
+      <BannerMobile/>
+  
 
       <main className={`${style.parent} ${isDarkMode ? style.darkp : ""}`}>
         <div className={style.metaInfo}>
@@ -127,7 +129,6 @@ const Blog = (props) => {
 
             {/* Adsterra Ad */}
 
-<BannerMobile/>
         <Image
   src={image}
   className={style.blogimage}
@@ -216,8 +217,8 @@ const Blog = (props) => {
           </div>
         </section>
       </main>
+
       <BannerMobile/>
-      <BannerDesk/>
 
       {props.data.rem.length > 0 && (
         <section className={`${style.suggestionparent} ${isDarkMode ? style.darksp : ""}`}>
