@@ -113,10 +113,11 @@ const Blog = (props) => {
       <div className={style.progressBarContainer}>
         <div className={style.progressBar} style={{transform: `scale(${scroll}, 1)`}}></div>
       </div>
-      <BannerMobile/>
   
 
       <main className={`${style.parent} ${isDarkMode ? style.darkp : ""}`}>
+      <BannerMobile/>
+      <BannerDesk/>
         <div className={style.metaInfo}>
           <h1 className={style.title}>{title}</h1>
           <p className={style.metap}>
@@ -216,9 +217,10 @@ const Blog = (props) => {
             </form>
           </div>
         </section>
+        <BannerMobile/>
+      <BannerDesk/>
       </main>
 
-      <BannerMobile/>
 
       {props.data.rem.length > 0 && (
         <section className={`${style.suggestionparent} ${isDarkMode ? style.darksp : ""}`}>

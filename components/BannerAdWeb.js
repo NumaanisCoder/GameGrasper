@@ -6,8 +6,8 @@ export default function BannerDesk() {
     const atOptions = {
         key: '0ecf031ab8296a5ea0b98aa91e96d87d',
         format: 'iframe',
-        height: 50,
-        width: 320,
+        height: 90,
+        width: 728,
         params: {},
     }
 
