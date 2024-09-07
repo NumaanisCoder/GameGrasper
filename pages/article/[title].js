@@ -123,6 +123,20 @@ const Blog = (props) => {
           </p>
         </div>
 
+            {/* Adsterra Ad */}
+    <div>
+      <script type="text/javascript">
+        {`atOptions = {
+          key: 'acaac523deb4aacb90748f33904788c0',
+          format: 'iframe',
+          height: 50,
+          width: 320,
+          params: {}
+        };`}
+      </script>
+      <script type="text/javascript" src="//www.topcreativeformat.com/acaac523deb4aacb90748f33904788c0/invoke.js"></script>
+    </div>
+
         <Image
   src={image}
   className={style.blogimage}
