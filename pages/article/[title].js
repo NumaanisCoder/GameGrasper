@@ -23,6 +23,7 @@ import FollowUs from "@/components/FollowUs";
 
 
 
+
 const Blog = (props) => {
   const { enqueueSnackbar } = useSnackbar();
   
@@ -141,6 +142,9 @@ const Blog = (props) => {
         <div className={style.socialMediaContainer}>
      <FaShare width={30}/> <SocialShare url={`https://www.gamegrasper.blog${urlpart}`} title={title}/>
         </div>
+  <AdBanner  data-ad-slot="5158369704"
+     data-ad-format="auto"
+     data-full-width-responsive="true"/>      
         <p
           className={`${style.content} ${isDarkMode ? style.darkContent : ""}`}
           dangerouslySetInnerHTML={{ __html: content }}
