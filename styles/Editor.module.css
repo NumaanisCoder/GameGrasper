@@ -1,4 +1,23 @@
 .root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    margin: 100px 100px;
+}
+
+
+
+
+
+
+
+
+
+
+.root{
     box-sizing: border-box;
     min-height: 100vh;
     padding: 10px;
@@ -93,19 +112,7 @@
     cursor: pointer;
     opacity: .9;
 }
-.linkToEditor{
-    margin-top: 100px;
-    margin-left: 20px;
-}
-.linkToEditor > a{
-    text-transform: uppercase;
-    background-color: rgb(10, 216, 48);
-    color: black;
-    border-radius: 10px;
-    padding: 10px 15px;
-    font-weight: 800;
 
-}
 
 @keyframes marqueeAnimation {
     0% { transform: translateX(100%); }

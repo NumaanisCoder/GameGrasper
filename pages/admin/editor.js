@@ -6,21 +6,18 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import { headers } from '@/next.config';
 
-export default function App(props) {
+export default function App() {
   const editorRef = useRef(null);
   const router = useRouter();
-  let formData = new FormData();
-
-  
 
   const [formValues, setFormValues] = useState({
-    title: props.data.blog.title,
-    content: props.data.blog.content,
-    summary: props.data.blog.summary,
-    tags: props.data.blog.tags,
+    title: '',
+    content: '',
+    summary: '',
+    tags:''
   });
   const [file, setFile] = useState(null);
-  const [submitButton, setSubmitButton] = useState('Update');
+  const [submitButton, setSubmitButton] = useState('Post');
   const [loading, setLoading] = useState(false); // For loading state
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
 
@@ -64,22 +61,29 @@ export default function App(props) {
 
   // Handle form submission
   const formHandler = async (e) => {
-    setSubmitButton("Updating...");
     e.preventDefault();
-    formData.set("id", router.query.id);
-    formData.set("title", formValues.title);
-    formData.set("summary", formValues.summary);
-    formData.set("content", formValues.content);
-    formData.set("category", formValues.category);
-    formData.set("image", file);
-    const res = await axios.post(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/updateblog`,
-      formData
-    );
-    const data = res.data;
-    if (data.progress) {
-      setSubmitButton("Updated");
-      router.push("/admin/root");
+    setSubmitButton('Posting...');
+    setLoading(true);
+
+    let formData = new FormData();
+    formData.append('title', formValues.title);
+    formData.append('summary', formValues.summary);
+    formData.append('content', editorRef.current ? editorRef.current.getContent() : formValues.content);
+    formData.append('tags', formValues.tags);
+    formData.append('image', file);
+
+    try {
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/uploadblog`, formData);
+      const data = res.data;
+      if (data.progress) {
+        setSubmitButton('Posted');
+        router.reload(); // Reload page after successful post
+      }
+    } catch (err) {
+      console.error('Error posting the form:', err);
+      setSubmitButton('Post');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -89,7 +93,7 @@ export default function App(props) {
     <div className={styles.root}>
       <div className={styles.form}>
         <form className={styles.formContainer} onSubmit={formHandler}>
-          <div className={`${styles.formGroup} `}>
+          <div className={`${styles.formGroup} ${isDarkMode ? styles.darkFG : ''}`}>
             <label className={styles.formLabel} htmlFor="title">Title</label>
             <input
               type="text"
@@ -100,21 +104,22 @@ export default function App(props) {
             />
           </div>
 
-          <div className={`${styles.formGroup}`}>
+          <div className={`${styles.formGroup} ${isDarkMode ? styles.darkFG : ''}`}>
             <label className={styles.formLabel} htmlFor="image">Image</label>
             <input
               type="file"
               name="image"
               onChange={(e) => setFile(e.target.files[0])}
+              required
             />
           </div>
 
-          <div className={`${styles.formGroup}`}>
+          <div className={`${styles.formGroup} ${isDarkMode ? styles.darkFG : ''}`}>
             <label className={styles.formLabel} htmlFor="content">Content</label>
             <Editor
               apiKey="jrxdph57q4mtysxvlm6944jhzld8wkacw7psmho9hxlfjown"
               onInit={(_evt, editor) => (editorRef.current = editor)}
-              value={formValues.content}
+              initialValue="<p>This is the initial content of the editor.</p>"
               init={{
                 height: 500,
                 menubar: false,
@@ -127,13 +132,13 @@ export default function App(props) {
                   'alignright alignjustify | bullist numlist outdent indent | removeformat | help image',
                 content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
                 image_dimensions: false,
-                images_upload_handler: handleImageUpload,
+                images_upload_handler: handleImageUpload    
               }}
               onEditorChange={(content) => setFormValues({ ...formValues, content })}
             />
           </div>
 
-          <div className={`${styles.formGroup} `}>
+          <div className={`${styles.formGroup} ${isDarkMode ? styles.darkFG : ''}`}>
             <label className={styles.formLabel} htmlFor="summary">Summary</label>
             <textarea
               name="summary"
@@ -144,6 +149,7 @@ export default function App(props) {
               required
             ></textarea>
           </div>
+
           <div className={`${styles.formGroup} ${isDarkMode ? style.darkFG : ""}`}>
             <label className={styles.formLabel} htmlFor="tags">
               Tags (comma separated)
@@ -151,16 +157,14 @@ export default function App(props) {
             <input
               type="text"
               name="tags"
-              value={formValues.tags}
               onChange={handleChange}
               required
             />
           </div>
-         
 
-          <div className={`${styles.formGroup} `}>
+          <div className={`${styles.formGroup} ${isDarkMode ? styles.darkFG : ''}`}>
             <button className={styles.submitButton} type="submit" disabled={loading}>
-              {loading ? 'Upadting...' : submitButton}
+              {loading ? 'Posting...' : submitButton}
             </button>
           </div>
           <button className={styles.submitButton} type='button' onClick={log}>Log Editor Content</button>
@@ -168,17 +172,4 @@ export default function App(props) {
       </div>
     </div>
   );
-}
-
-
-export async function getServerSideProps(context) {
-  const { query } = context;
-  // Fetch data from external API
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/${query.id}`
-  );
-  const data = await res.json();
-
-  // Pass data to the page via props
-  return { props: { data } };
 }

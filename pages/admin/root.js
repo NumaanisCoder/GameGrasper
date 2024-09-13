@@ -10,6 +10,7 @@ import Cookies from "js-cookie";
 import getFilterOptions from "@/lib/FilterProvider";
 import { useSnackbar } from "notistack";
 import MyChart from "@/components/MyChart";
+import Link from "next/link";
 
 
 
@@ -132,6 +133,9 @@ const Admin = (props) => {
 
   return (
     <div className={`${style.root} ${isDarkMode ? style.dark : ""}`}>
+      <div className={style.linkToEditor}>
+      <Link href="/admin/editor">Upload Blog Via Editor</Link>
+      </div>
       <details>
         <summary>Upload new Blog</summary>
         <form className={style.formContainer} onSubmit={formHandler}>
