@@ -7,7 +7,7 @@
     padding: 10px;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    background-color: #f2f2f2;
+    background-color: #181818;
 
 }
 .dark{
@@ -63,8 +63,8 @@
     margin-bottom: 50px;
     margin-top: 60px;
     width: 70rem;
-    color: black;
-    background-color: #f6f6f6;
+    color: white;
+    background-color: #181818;
 }
 .parent.darkp{
     color: white;
@@ -96,7 +96,7 @@
     margin-top: 80px;
     display: flex;
     flex-direction: column;
-    width: 20rem;
+    width: 27rem;
     background: inherit;
     height: fit-content;
     padding: 5px 10px;
@@ -142,6 +142,7 @@
     min-height: 200px;
     width: 100%;
     object-fit: contain;
+    border-radius: 6px;
 }
 .socialMediaContainer{
     width: 100%;
@@ -165,6 +166,9 @@
     padding: 4px 5px 8px 25px;
     margin-left: 10px;
 }
+.content p{
+    margin: 10px 0px;
+}
 .content li{
     line-height: 27px;
     font-size: 18px;
@@ -174,27 +178,27 @@
    width: fit-content;
    color: rgb(203, 54, 0);
    border-bottom: 2px solid red ;
+   font-size: 40px;
   
 }
 .content h3{
     font-family: 'TitleFont';
-   font-size: 700;
-   text-decoration: underline;
+   font-size: 40px;
+
    /* text-shadow: 1px 1px 1px blue; */
    width: fit-content;
-   color: #008080;
    font-weight: 500;
    border-radius: 10px;
 }
 .content a{
-    color: blue;
+    color: rgb(0, 166, 255);
 }
 .content em{
     font-weight: 600;
 }
 
 .content li strong{
-    color: #0D1B2A;
+    color: #ff0015;
 }
 .darkContent h2{
     color: white;
@@ -237,6 +241,7 @@
     text-decoration: underline;
     text-decoration-color: red;
     line-height: 10px;
+    color: white;
 }
 .sphead.darkSpHead{
    color: white;
@@ -411,6 +416,7 @@
     .suggestionparent {
         margin-top: 0;
         width: 100%;
+
     }
 
     .backLinksC {

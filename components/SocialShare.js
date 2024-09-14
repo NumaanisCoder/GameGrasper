@@ -15,7 +15,7 @@ const SocialShare = ({ url, title }) => {
         aria-label="Share on Facebook"
         style={{ color: '#1877F2' }}
       >
-        <FaFacebook size={30}/>
+        <FaFacebook size={30} />
       </a>
 
       {/* Reddit */}

@@ -4,8 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
-    background: white;
+    color: white;
+    background: #333333;
 }
 .rootkabaap.dark{
     background-color: #181818;

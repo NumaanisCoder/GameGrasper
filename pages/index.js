@@ -49,7 +49,7 @@ const Index = (props) => {
             <h2>Latest Blogs</h2>
             {Next3Blog.map((value, key) =>
               <Link href={getURL(value)} className={`${style.blogCard} ${isDarkMode ? style.blackBlogCard : ""}`}>
-                <p>{value.title}</p>
+                <p>{value.title.substring(0,45)}...</p>
                 <img src={value.image} alt="" />
               </Link>
             )}

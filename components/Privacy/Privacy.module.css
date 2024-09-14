@@ -2,8 +2,8 @@
     min-height: 90vh;
     display: flex;
     justify-content: start;
-    background-color: #f2f2f2;
-    color: black;
+    color: white;
+    background: #333333;
 }
 .root.dark{
     background-color: black;

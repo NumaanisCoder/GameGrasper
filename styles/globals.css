@@ -170,7 +170,7 @@ ol > li::marker{
   content:  counter(list-item) ') ';
   font-weight: bold;
   font-size: 19px;
-  color: rgb(220, 63, 20);
+  color: #ff0015;
   background-color: yellow;
 }
 
