@@ -130,10 +130,10 @@
 
 .author,
 .category {
-    color: rgb(111, 111, 111);
+    color: #f2f2f2;
 }
 .darkAuthor{
-    color: rgb(200, 190, 190);
+    color: rgb(231, 231, 231);
 }
 
 .blogimage {
@@ -300,6 +300,10 @@
     border: 1px solid red;
 }
 .commentTextArea.DcommentTextArea{
+    background-color: black;
+    color: white;
+}
+.formGroup > textarea{
     background-color: black;
     color: white;
 }
