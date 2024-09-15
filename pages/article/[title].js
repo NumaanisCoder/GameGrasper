@@ -82,14 +82,6 @@ const Blog = (props) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (err) {
-      console.log("AdSense Error:", err);
-    }
-  
-  }, [content]);
   
 
   function formatDate(milliseconds) {
@@ -99,6 +91,25 @@ const Blog = (props) => {
 
 
   const arrayoftags = tags && tags.split(',').map(tag => tag.trim());
+  const splitContent = (content, length) => {
+    // Check if content length is less than or equal to the desired length
+    if (content.length <= length) {
+      return [content];
+    }
+  
+    // Find the nearest space before the length
+    let splitIndex = content.lastIndexOf(' ', length);
+  
+    // If no space is found (like in the first segment), split at length
+    if (splitIndex === -1) {
+      splitIndex = length;
+    }
+  
+    // Return the first part and the rest of the content
+    return [content.substring(0, splitIndex), content.substring(splitIndex).trim()];
+  };
+  
+  const [firstPart, secondPart] = splitContent(content, 200);
 
 
   return (
@@ -153,13 +164,23 @@ const Blog = (props) => {
         <div className={style.socialMediaContainer}>
      <FaShare width={30}/> <SocialShare url={`https://www.gamegrasper.blog${urlpart}`} title={title}/>
         </div>
-  <AdBanner  data-ad-slot="5158369704"
-     data-ad-format="auto"
-     data-full-width-responsive="true"/>      
-        <p
-          className={`${style.content} ${isDarkMode ? style.darkContent : ""}`}
-          dangerouslySetInnerHTML={{ __html: content }}
-        ></p>
+ {/* First part of the content */}
+ <p
+      className={`${style.content} ${isDarkMode ? style.darkContent : ""}`}
+      dangerouslySetInnerHTML={{ __html: firstPart }}
+    ></p>
+
+    {/* First Ad Banner */}
+    <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
+
+    {/* Second part of the content */}
+    <p
+      className={`${style.content} ${isDarkMode ? style.darkContent : ""}`}
+      dangerouslySetInnerHTML={{ __html: secondPart }}
+    ></p>
+
+    {/* Second Ad Banner */}
+    <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
         
         <div className={style.tagContainer}>
           {arrayoftags && <span>Tags:</span>} {arrayoftags && arrayoftags.map((value, index) => (
