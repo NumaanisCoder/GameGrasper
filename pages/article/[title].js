@@ -91,15 +91,7 @@ const Blog = (props) => {
 
 
   const arrayoftags = tags && tags.split(',').map(tag => tag.trim());
-  const splitContent = (content, length1, length2) => {
-    const firstPart = content.substring(0, length1);
-    const secondPart = content.substring(length1, length1 + length2);
-    const thirdPart = content.substring(length1 + length2);
-  
-    return [firstPart, secondPart, thirdPart];
-  };
-  
-  const [firstPart, secondPart, thirdPart] = splitContent(content, 300, 300);
+
 
 
   return (
@@ -154,23 +146,13 @@ const Blog = (props) => {
         <div className={style.socialMediaContainer}>
      <FaShare width={30}/> <SocialShare url={`https://www.gamegrasper.blog${urlpart}`} title={title}/>
         </div>
+
+      <p
+        className={`${style.content} ${isDarkMode ? style.darkContent : ""}`}
+        dangerouslySetInnerHTML={{ __html: content }}
+      ></p>
         <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
-      <p
-        className={`${style.content} ${isDarkMode ? style.darkContent : ""}`}
-        dangerouslySetInnerHTML={{ __html: firstPart }}
-      ></p>
 
-      <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
-      <p
-        className={`${style.content} ${isDarkMode ? style.darkContent : ""}`}
-        dangerouslySetInnerHTML={{ __html: secondPart }}
-      ></p>
-
-      <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
-      <p
-        className={`${style.content} ${isDarkMode ? style.darkContent : ""}`}
-        dangerouslySetInnerHTML={{ __html: thirdPart }}
-      ></p>
         
         <div className={style.tagContainer}>
           {arrayoftags && <span>Tags:</span>} {arrayoftags && arrayoftags.map((value, index) => (
@@ -245,6 +227,7 @@ const Blog = (props) => {
       </main>
 
 
+      <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
       {props.data.rem.length > 0 && (
         <section className={`${style.suggestionparent} ${isDarkMode ? style.darksp : ""}`}>
           <p className={`${style.sphead} ${isDarkMode ? style.darkSpHead : ""}`}>
