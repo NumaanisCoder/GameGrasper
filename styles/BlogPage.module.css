@@ -176,8 +176,7 @@
 .content h2{
     font-family: 'TitleFont';
    width: fit-content;
-   color: rgb(203, 54, 0);
-   border-bottom: 2px solid red ;
+   color: white;
    font-size: 40px;
   
 }
