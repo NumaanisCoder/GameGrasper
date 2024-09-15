@@ -166,8 +166,8 @@
     padding: 4px 5px 8px 25px;
     margin-left: 10px;
 }
-.content p{
-    margin: 10px 0px;
+.content > p{
+    margin-bottom: 15px;
 }
 .content li{
     line-height: 27px;
@@ -355,7 +355,7 @@
   
   
 .progressBar {
-    background: red;
+    background: linear-gradient(to right, black, red);
     transform-origin: top left;
     transform: scale(0,0);
     opacity: 100;
@@ -363,7 +363,7 @@
 
 .progressBarContainer,
 .progressBar {
-    height: 10px;
+    height: 3px;
 }
 
 
