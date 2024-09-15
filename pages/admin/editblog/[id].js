@@ -123,8 +123,7 @@ export default function App(props) {
                   'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
                   'insertdatetime', 'media', 'table', 'help', 'wordcount'
                 ],
-                toolbar: 'undo redo | blocks | bold italic forecolor | alignleft aligncenter ' +
-                  'alignright alignjustify | bullist numlist outdent indent | removeformat | help image',
+                toolbar: 'undo redo print spellcheckdialog formatpainter | blocks fontfamily fontsize | bold italic underline forecolor backcolor | link image | alignleft aligncenter alignright alignjustify | code',
                 content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
                 image_dimensions: false,
                 images_upload_handler: handleImageUpload,

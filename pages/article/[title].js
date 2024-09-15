@@ -66,6 +66,7 @@ const Blog = (props) => {
     handleResize();
     window.addEventListener("resize", handleResize);
 
+   
 
     let progressBarHandler = () => {
             
@@ -80,6 +81,16 @@ const Blog = (props) => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (err) {
+      console.log("AdSense Error:", err);
+    }
+  
+  }, [content]);
+  
 
   function formatDate(milliseconds) {
     const date = new Date(milliseconds);
