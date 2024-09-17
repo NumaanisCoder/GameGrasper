@@ -78,6 +78,12 @@ const Blog = (props) => {
     const date = new Date(milliseconds);
     return date.toUTCString();
   }
+  function getURL(){
+    const encrypturl = title.replace(/-/g, '~');
+    const questionmark = encrypturl.replace(/\?/g, '$');
+    const urlpart = `/article/${questionmark.replace(/ /g, '-')}`;
+    return urlpart;
+  }
 
   const arrayoftags = tags && tags.split(',').map(tag => tag.trim());
 
@@ -92,7 +98,7 @@ const Blog = (props) => {
         <meta property="og:image" content={image} />
         <meta property="og:image:secure_url" content={image} />
         <meta property="og:image:alt" content={title} />
-        <meta property="og:url" content={`https://www.gamegrasper.blog/article/${title.replace(/ /g, "-")}`} />
+        <meta property="og:url" content={`https://www.gamegrasper.blog${getURL}`} />
         <meta property="og:type" content="article" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={summary} />
