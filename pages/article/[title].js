@@ -12,6 +12,8 @@ import axios from "axios";
 import { useSnackbar } from "notistack";
 import { FaShare } from "react-icons/fa";
 
+import {Open_Sans} from 'next/font/google'
+
 // Dynamically import components
 const Sbc = dynamic(() => import("@/components/SBC/Sbc"));
 const AdBanner = dynamic(() => import("@/components/AdBanner"));
@@ -19,6 +21,8 @@ const SingleComment = dynamic(() => import("@/components/comment/SingleComment")
 const Tag = dynamic(() => import("@/components/tag/Tag"));
 const SocialShare = dynamic(() => import("@/components/SocialShare"));
 const FollowUs = dynamic(() => import("@/components/FollowUs"));
+
+const Open_Sans_Font = Open_Sans({ subsets: ['latin'] })
 
 const Blog = (props) => {
   const { enqueueSnackbar } = useSnackbar();
@@ -139,7 +143,7 @@ const Blog = (props) => {
         </div>
 
         <p
-          className={`${style.content} ${isDarkMode ? style.darkContent : ""}`}
+          className={`${style.content} ${isDarkMode ? style.darkContent : ""} ${Open_Sans_Font.className}`}
           dangerouslySetInnerHTML={{ __html: content }}
         ></p>
 
