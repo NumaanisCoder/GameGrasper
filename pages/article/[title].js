@@ -142,6 +142,9 @@ const Blog = (props) => {
           <SocialShare url={`https://www.gamegrasper.blog${urlpart}`} title={title} />
         </div>
 
+        <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
+        <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
+
         <p
           className={`${style.content} ${isDarkMode ? style.darkContent : ""} ${Open_Sans_Font.className}`}
           dangerouslySetInnerHTML={{ __html: content }}
@@ -216,7 +219,7 @@ const Blog = (props) => {
         </section>
       </main>
 
-      <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
+  
       {props.data.rem.length > 0 && (
         <section className={`${style.suggestionparent} ${isDarkMode ? style.darksp : ""}`}>
           <p className={`${style.sphead} ${isDarkMode ? style.darkSpHead : ""}`}>Latest</p>
@@ -226,6 +229,12 @@ const Blog = (props) => {
             ))}
           </div>
         </section>
+      )}
+      {!isMobile && (
+        <>
+    <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
+    <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
+    </>
       )}
     </article>
   );
