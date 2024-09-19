@@ -11,9 +11,45 @@ import Script from "next/script";
 import store from "@/store/store";
 import CookieConsentComponent from "@/components/CookieConstent";
 import { SnackbarProvider } from "notistack";
+import { useEffect } from "react";
+
 
 
 export default function App({ Component, pageProps }) {
+  useEffect(() => {
+    // Add Google Funding Choices script dynamically
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = "https://fundingchoicesmessages.google.com/i/pub-4131180580860903?ers=1";
+    document.body.appendChild(script);
+
+    // Inline script for iframe handling
+    const inlineScript = document.createElement('script');
+    inlineScript.innerHTML = `
+      (function() {
+        function signalGooglefcPresent() {
+          if (!window.frames['googlefcPresent']) {
+            if (document.body) {
+              const iframe = document.createElement('iframe');
+              iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;';
+              iframe.style.display = 'none';
+              iframe.name = 'googlefcPresent';
+              document.body.appendChild(iframe);
+            } else {
+              setTimeout(signalGooglefcPresent, 0);
+            }
+          }
+        }
+        signalGooglefcPresent();
+      })();
+    `;
+    document.body.appendChild(inlineScript);
+
+    return () => {
+      document.body.removeChild(script);
+      document.body.removeChild(inlineScript);
+    };
+  }, []);
   return (
     <Provider store={store}>
     <SnackbarProvider autoHideDuration={2000}>
@@ -80,48 +116,11 @@ export default function App({ Component, pageProps }) {
         ></script>
         <meta name="google-adsense-account" content="ca-pub-4131180580860903"></meta>
 
-        {/* Google Adsense Code */}
-        {/* {process.env.NEXT_PUBLIC_PRODUCTION ? (
-          <Script
-            id="adsbygoogle-init"
-            strategy="afterInteractive"
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4131180580860903"
-          />
-
-        ) : null} */}
+     
         
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4131180580860903"
      crossorigin="anonymous"></script>
 
-        {/* Adbloacker Script */}
-
-        {/* <script
-          async
-          src="https://fundingchoicesmessages.google.com/i/pub-4131180580860903?ers=1"
-          nonce="bANSMe-qXvls0bNz1Mb2Lg"
-        ></script> */}
-        {/* <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                function signalGooglefcPresent() {
-                  if (!window.frames['googlefcPresent']) {
-                    if (document.body) {
-                      const iframe = document.createElement('iframe');
-                      iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;';
-                      iframe.style.display = 'none';
-                      iframe.name = 'googlefcPresent';
-                      document.body.appendChild(iframe);
-                    } else {
-                      setTimeout(signalGooglefcPresent, 0);
-                    }
-                  }
-                }
-                signalGooglefcPresent();
-              })();
-            `,
-          }}
-        ></script> */}
 
 
 
