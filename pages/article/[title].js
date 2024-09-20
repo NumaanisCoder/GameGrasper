@@ -152,7 +152,7 @@ const Blog = (props) => {
         </div>
 
         <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
-        <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
+        
 
         <p
           className={`${style.content} ${isDarkMode ? style.darkContent : ""} ${Open_Sans_Font.className}`}
@@ -169,6 +169,7 @@ const Blog = (props) => {
         <div className={style.socialMediaContainer}>
           Follow us on <FollowUs />
         </div>
+        <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
 
         <h3 className={style.commentSecTitle}>Comment Section</h3>
         <section className={style.commentSection}>
