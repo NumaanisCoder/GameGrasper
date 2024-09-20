@@ -72,8 +72,17 @@ const Blog = (props) => {
 
       setScroll(scroll);
     };
+       // Load Twitter script
+       const script = document.createElement('script');
+       script.src = 'https://platform.twitter.com/widgets.js';
+       script.async = true;
+       document.body.appendChild(script);
 
-    window.addEventListener("scroll", progressBarHandler);
+       return () => {
+        window.removeEventListener("resize", handleResize);
+        window.removeEventListener("scroll", progressBarHandler);
+        document.body.removeChild(script); // Clean up the script
+      };
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
