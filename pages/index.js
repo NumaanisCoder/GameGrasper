@@ -65,10 +65,11 @@ const Index = (props) => {
           <div className={style.mostViewBlogContainer}>
             {mostViewd && mostViewd.map((value, key) =>
 
-              <Link href={getURL(value)} className={`${style.verticleBlogCard} ${isDarkMode ? style.DarkverticleBlogCard : ""}`}>
-                <img src={value.image} alt="" srcset="" />
-                <p>{value.title}</p>
-              </Link>)}
+<Link href={getURL(value)} className={style.vlatestBlogCard}>
+<div className={style.vlbcimage} style={{backgroundImage: `url(${value.image})`}}>
+<p className={style.vlbctitle}>{value.title}</p>
+</div>
+</Link>)}
           </div>
 
         </div>

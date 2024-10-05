@@ -238,14 +238,15 @@ const Blog = (props) => {
               <Sbc data={value} key={index} />
             ))}
           </div>
-        </section>
-      )}
-      {!isMobile && (
+          {!isMobile && (
         <>
     <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
     <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
     </>
       )}
+        </section>
+      )}
+     
     </article>
   );
 };
