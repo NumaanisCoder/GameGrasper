@@ -102,23 +102,44 @@ const Blog = (props) => {
 
   return (
     <article className={`${style.root} ${isDarkMode ? style.dark : ""}`}>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={summary} />
-        <link rel="canonical" href={urlpart} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={summary} />
-        <meta property="og:image" content={image} />
-        <meta property="og:image:secure_url" content={image} />
-        <meta property="og:image:alt" content={title} />
-        <meta property="og:url" content={`https://www.gamegrasper.blog${getURL}`} />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={summary} />
-        <meta name="twitter:image" content={image} />
-        <meta name="twitter:image:alt" content={image} />
-        <meta name="twitter:card" content={summary} />
-      </Head>
+     <Head>
+  <title>{title} - Must Read Blog</title>
+  <meta name="description" content={summary} />
+  <link rel="canonical" href={urlpart} />
+  <meta property="og:title" content={`${title} | Latest Trends`} />
+  <meta property="og:description" content={summary} />
+  <meta property="og:image" content={image} />
+  <meta property="og:image:alt" content={title} />
+  <meta name="twitter:title" content={`${title} - Exclusive Article`} />
+  <meta name="twitter:description" content={summary} />
+  <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": title,
+            "image": image,
+            "author": {
+              "@type": "Person",
+              "name": "Numaan Qureshi"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "GameGrasper",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.gamegrasper.blog/GameGrasperLogo.png"
+              }
+            },
+            "datePublished": createdAt,
+            "description": summary,
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://www.gamegrasper.com${getURL(title)}`
+            }
+          })
+        }} />
+</Head>
+
 
       <div className={style.progressBarContainer}>
         <div className={style.progressBar} style={{ transform: `scale(${scroll}, 1)` }}></div>
@@ -136,15 +157,16 @@ const Blog = (props) => {
         </div>
 
         <Image
-          src={image}
-          className={style.blogimage}
-          alt={title}
-          layout="responsive"
-          width={700}
-          height={500}
-          quality={65}
-          loading="lazy"
-        />
+  src={image}
+  className={style.blogimage}
+  alt={title}
+  layout="responsive"
+  width={1200}
+  height={800}
+  quality={80}
+  loading="lazy"
+/>
+
 
         <div className={style.socialMediaContainer}>
           <FaShare width={30} />
