@@ -67,24 +67,44 @@
 
 .Link>a {
     float: left;
-    margin-left: 20px;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    border: none;
-    border-radius: 0px;
-    padding: 6px 8px;
-    border-left: 8px solid red;
-    width: fit-content;
-    font-weight: 400;
-    background-color: black;
-    color: white;
-    box-shadow: 1px 1px 2px black;
-    border-radius: 6px;
-    transition: all .5s linear;
+    margin-left: 10px;
+    border: 1px solid #D80032;
+    border-radius: 1px;
+    padding: 8px 20px;
+    background: linear-gradient(180deg, #EF233C 0, #D80032 100%);
     position: relative;
+    overflow: hidden;
+    color: white;
+    border-radius: 10px;
+    max-height: max-content;
+    transition: all linear 0.5s;
 }
-
+.Link > a::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(120deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, .8),
+        rgba(255, 255, 255, 0) 70%);
+    top: 0;
+    left: -100px;
+    animation: shine 3s infinite linear;
+}
+@keyframes shine {
+    0% {
+      left: -100px;
+    }
+  
+    20% {
+      left: 100%;
+    }
+  
+    100% {
+      left: 100%;
+    }
+  }
 
 .Link a:hover {
     cursor: pointer;

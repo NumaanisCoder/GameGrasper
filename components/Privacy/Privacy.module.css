@@ -3,7 +3,7 @@
     display: flex;
     justify-content: start;
     color: white;
-    background: #333333;
+    background-color: var(--main-background);
 }
 .root.dark{
     background-color: black;

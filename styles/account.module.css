@@ -7,7 +7,7 @@
     align-items: center;
     font-family: "Ubuntu", sans-serif;
     width: 100%;
-    background-color: #333333;
+    background-color: var(--main-background);
 }
 
 .darkRoot{
@@ -19,7 +19,7 @@
     margin-top: 20px;
     color: white;
     padding: 15px 25px;
-    background-color: black;
+    background-color: var(--main-cardbackground);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,6 +44,7 @@
 
 .formGroup > h1{
     text-align: center;
+    margin-bottom: 30px;
 }
 .formGroup > label{
     text-transform: capitalize;
@@ -56,7 +57,7 @@
     height: 40px;
     padding: 0 0 0 15px;
     color: white;
-    border: 0.5px solid red;
+    border: 0.5px solid white;
     border-radius: 5px;
     background: none;
     outline: none;
@@ -64,7 +65,7 @@
    
 }
 .formGroup input:focus{
-    border: 2px solid red;
+    border: 2px solid white;
 }
 
 
@@ -78,12 +79,12 @@
     position: absolute;
     top: -65px;
     left: -65px;
-    color: red;
+    color: white;
     z-index: 1;
     padding: 0 10px;
     box-sizing: border-box;
     transition: 0.3s ease;
-    background-color: black;
+    background-color: var(--main-cardbackground);
 }
 
 .emailLabel{
@@ -95,12 +96,12 @@
     position: absolute;
     top: -65px;
     left: -65px;
-    color: red;
+    color: white;
     z-index: 1;
     padding: 0 10px;
     box-sizing: border-box;
     transition: 0.3s ease;
-    background-color: black;
+    background-color: var(--main-cardbackground);
 }
  
 .usernamelabel{
@@ -112,12 +113,12 @@
     position: absolute;
     top: -65px;
     left: -65px;
-    color: red;
+    color: white;
     z-index: 1;
     padding: 0 10px;
     box-sizing: border-box;
     transition: 0.3s ease;
-    background-color: black;
+    background-color: var(--main-cardbackground);
 }
 
 
@@ -129,20 +130,49 @@
     text-decoration: underline;
 }
 .formGroup > button{
-    text-transform: capitalize;
-    border: none;
+    float: left;
+    border: 1px solid #D80032;
+    border-radius: 1px;
+    padding: 8px 20px;
+    background: linear-gradient(180deg, #EF233C 0, #D80032 100%);
+    position: relative;
+    overflow: hidden;
+    color: white;
     border-radius: 10px;
-    padding: 10px 15px;
-    font-weight: 600;
-    background-color: red;
-    color: black;
-    transition: all 200ms;
+    max-height: max-content;
+    transition: all linear 0.5s;
 }
 
 .formGroup > button:hover{
     cursor: pointer;
     transform: scale(1.1);
 }
+.formGroup > button::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(120deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, .8),
+        rgba(255, 255, 255, 0) 70%);
+    top: 0;
+    left: -100px;
+    animation: shine 3s infinite linear;
+}
+@keyframes shine {
+    0% {
+      left: -100px;
+    }
+  
+    20% {
+      left: 100%;
+    }
+  
+    100% {
+      left: 100%;
+    }
+  }
 
 .navD{
     display: flex;

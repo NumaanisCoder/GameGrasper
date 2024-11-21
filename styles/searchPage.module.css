@@ -1,6 +1,6 @@
 .parent{
     min-height: 100vh;
-    background: #f2f2f2;
+    background-color: var(--main-background);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,18 +25,21 @@ display: flex;
     border-bottom: 2px solid red;
     padding: 15px 25px;
     outline: 0;
-    color: black;
+    color: white;
     font-size: 18px;
     caret-color: red;
     height: 50px;
-    box-shadow: 2px 2px 4px orangered;
+    box-shadow: 2px 2px 4px red;
+}
+.searchInput::placeholder{
+    color: #f2f2f2;
 }
 .darkSearchInput{
     background-color: black;
     color: white;
 }
 .darkSearchInput::placeholder{
-    color: orangered;
+    color: #f2f2f2;
 }
 
 

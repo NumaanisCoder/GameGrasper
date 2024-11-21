@@ -1,3 +1,4 @@
+/* Parent Nav Bar */
 .parent {
     height: 60px;
     width: 100%;
@@ -14,154 +15,165 @@
     padding: 10px 30px;
 }
 
-.dark {
-    background: black;
-    color: white;
-}
-
-.navUl {
-    float: right;
-    margin-right: 20px;
-}
-
-.navUl.darkUL {
-    background-color: black;
-}
-
-.navLi {
-    display: inline-block;
-    line-height: 60px;
-    margin: 0 5px;
-    box-sizing: border-box;
-}
-
-.navLi>a {
-    font-family: 'TitleFont';
-    color: black;
-    border-radius: 6px;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 7px 13px;
-    text-transform: uppercase;
-}
-
-.navLi > a:hover{
-    background-color: red;
-    color: black;
-    text-decoration: underline;
-    text-decoration-color: black;
-    
-}
-
-.darkActive>a:hover {
-    background-color: rgb(65, 65, 65);
-}
-
-
-.checkbtn {
-    color: white;
-    font-size: 30px;
-    float: right;
-    line-height: 70px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
-}
-
-.check {
-    display: none;
-}
-
 .Logo {
     color: red;
     -webkit-text-stroke-color: black;
     font-family: 'AvengersFont';
     font-size: 30px;
-    line-height: 60px;
-    padding: 0 100px;
+  
 }
 
 .Logo span {
     color: black;
 }
 
-.Logo.darkLogo {
-    color: white;
-    -webkit-text-stroke-color: black;
+/* Nav Links */
+.navUl {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    transition: all 0.5s;
 }
 
-.darkActive>a {
-    color: white;
+.navLi {
+    line-height: 35px;
+    margin: 0 5px;
+    box-sizing: border-box;
+}
+
+.navLi > a {
+    color: black;
+    border-radius: 6px;
+    font-size: 18px;
+    padding: 7px 13px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
 }
 
 
-@media (max-width:952px) {
+.navLi > a:hover {
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+
+
+.bookContainer {
+    border: 1px solid #448ffe;
+    border-radius: 1px;
+    padding: 5px 20px;
+    background: linear-gradient(180deg, #448ffe 0, #1f7bff 100%);
+    position: relative;
+    overflow: hidden;
+    color: white;
+    border-radius: 10px;
+    max-height: max-content;
+    transition: all linear 0.5s;
+  }
+  .bookContainer:hover{
+    cursor: pointer;
+    transform: scale(0.95);
+    border: 1px solid #1f7bff;
+  }
+  
+  .bookContainer::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(120deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, .8),
+        rgba(255, 255, 255, 0) 70%);
+    top: 0;
+    left: -100px;
+    animation: shine 3s infinite linear;
+  }
+
+  @keyframes shine {
+    0% {
+      left: -100px;
+    }
+  
+    20% {
+      left: 100%;
+    }
+  
+    100% {
+      left: 100%;
+    }
+  }
+
+/* Hamburger Icon */
+.checkbtn {
+    color: black;
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Hidden by default on desktop */
+}
+
+/* Checkbox to toggle menu visibility */
+.check {
+    display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 952px) {
     .Logo {
         font-size: 30px;
-        line-height: 70px;
-        padding-left: 50px;
     }
-
-    .navLi>a {
+    .navLi > a {
         font-size: 16px;
     }
 }
 
 @media (max-width: 858px) {
-
     .parent {
-        height: 70px;
+        height: 60px;
+        padding: 0 15px;
+      flex-direction: row-reverse;
     }
 
+    /* Display the check button on small screens */
     .checkbtn {
         display: block;
     }
 
+    /* Full-screen nav for small screens */
     .navUl {
         position: fixed;
+        display: flex;
+        flex-direction: column;
         width: 100%;
-        height: 100vh;
-        background-color: #242424;
-        top: 70px;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        height: calc(100vh - 60px);
+        top: 60px;
         left: -100%;
         text-align: center;
-        transform: all .5s;
-    }
-    
-    .navLi {
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
     }
 
-    .active {
-        background: transparent;
-    }
-    
-    .navLi>a {
-    
-        color: white;
+    .navLi > a {
         font-size: 20px;
     }
 
-    .darkIcon {
-        color: white;
-    }
-
-    .darkActive>a {
-        color: white;
-    }
-
-
-    .check:checked~.navUl {
+    /* Toggle nav visibility with checkbox */
+    .check:checked ~ .navUl {
         left: 0;
-        transition: all .6s;
+        transition: all 0.6s ease;
     }
 
-    .check:not(:checked)~.navUl {
+    .check:not(:checked) ~ .navUl {
         left: -100%;
-        /* or any other value to hide the .navUl */
-        transition: all .6s;
+        transition: all 0.6s ease;
     }
-
+    .Logo{
+        gap: 8px;
+        font-size: 25px;
+    }
+    .Logo > img{
+        width: 28px;
+    }
 }
