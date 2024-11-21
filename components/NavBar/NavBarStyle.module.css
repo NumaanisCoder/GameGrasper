@@ -1,13 +1,17 @@
 .parent {
     height: 60px;
     width: 100%;
-    color: white;
+    color: black;
     position: fixed;
-    background-color: white;
+    background: rgba(255, 255, 255, .8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     top: 0;
     z-index: 99;
-    background: black;
-    border-bottom: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
 }
 
 .dark {
@@ -33,7 +37,7 @@
 
 .navLi>a {
     font-family: 'TitleFont';
-    color: white;
+    color: black;
     border-radius: 6px;
     font-size: 18px;
     font-weight: 600;
@@ -78,7 +82,7 @@
 }
 
 .Logo span {
-    color: white;
+    color: black;
 }
 
 .Logo.darkLogo {

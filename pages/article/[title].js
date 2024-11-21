@@ -141,9 +141,7 @@ const Blog = (props) => {
 </Head>
 
 
-      <div className={style.progressBarContainer}>
-        <div className={style.progressBar} style={{ transform: `scale(${scroll}, 1)` }}></div>
-      </div>
+      
 
       <main className={`${style.parent} ${isDarkMode ? style.darkp : ""}`}>
         <div className={style.metaInfo}>
