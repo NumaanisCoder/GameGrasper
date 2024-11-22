@@ -12,7 +12,9 @@ import axios from "axios";
 import { useSnackbar } from "notistack";
 import { FaShare } from "react-icons/fa";
 
+
 import {Open_Sans} from 'next/font/google'
+import PopupForm from "@/components/PopUpAd/PopUpAd";
 
 // Dynamically import components
 const Sbc = dynamic(() => import("@/components/SBC/Sbc"));
@@ -25,9 +27,18 @@ const FollowUs = dynamic(() => import("@/components/FollowUs"));
 const Open_Sans_Font = Open_Sans({ subsets: ['latin'] })
 
 const Blog = (props) => {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
   const token = Cookies.get('token');
   const router = useRouter();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsPopupVisible(true);
+    }, 15000); // 5 seconds delay
+
+    return () => clearTimeout(timer); // Cleanup the timer
+  }, []);
 
   const {
     _id,
@@ -164,7 +175,9 @@ const Blog = (props) => {
   quality={80}
   loading="lazy"
 />
-
+{isPopupVisible && (
+        <PopupForm onClose={() => setIsPopupVisible(false)} />
+      )}
 
         <div className={style.socialMediaContainer}>
           <FaShare width={30} />
