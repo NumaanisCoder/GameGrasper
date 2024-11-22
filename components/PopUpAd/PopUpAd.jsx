@@ -11,15 +11,18 @@ const PopupForm = ({ onClose }) => {
   const [message, setMessage] = useState("");
   const [messageColor, setMessageColor] = useState("");
   const { enqueueSnackbar } = useSnackbar(); // Initialize the notification system
+  const [Button, setButton] = useState("Get Started")
 
   const handleSubmit = async (event) => {
+    setButton("Sending..")
     event.preventDefault();
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "08da09b6-aa22-4e64-a195-99acfdacff5e");
+    formData.append("access_key", "cb7512c7-7537-4f58-86c8-16b64f0d2277");
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
+    console.log(json)
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -28,13 +31,13 @@ const PopupForm = ({ onClose }) => {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: json,
-        mode: "no-cors",
+        body: json
       });
       const result = await response.json();
       if (result.success) {
         setMessage("Thanks for contacting us! We'll be in touch shortly.");
         setMessageColor("green");
+        setButton("Get Started")
         enqueueSnackbar("Response Submitted!", { variant: "success" });
         setEmail(""); // Clear the email field after successful submission
       } else {
@@ -66,7 +69,7 @@ const PopupForm = ({ onClose }) => {
             className={styles.input}
           />
           <button type="submit" className={styles.submitBtn}>
-            Get Started
+            {Button}
           </button>
         </form>
         {message && (
