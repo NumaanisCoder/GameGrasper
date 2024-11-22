@@ -42,7 +42,7 @@ const PopupForm = ({ onClose }) => {
         setMessageColor("red");
       }
     } catch (error) {
-      setMessage("An error occurred. Please try again.");
+      setMessage("An error occurred. Please try again. Or Email to info@hawkflit.com");
       setMessageColor("red");
     }
   };
