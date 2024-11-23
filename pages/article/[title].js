@@ -35,7 +35,7 @@ const Blog = (props) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsPopupVisible(true);
-    }, 15000); // 5 seconds delay
+    }, 8000); // 5 seconds delay
 
     return () => clearTimeout(timer); // Cleanup the timer
   }, []);

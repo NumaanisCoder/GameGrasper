@@ -13,7 +13,8 @@
     color: white;
     padding: 30px 45px;
     gap: 8px;
-    width: 100%;
+    width: 50%;
+    max-width: 50rem;
     justify-content: center;
     align-self: center;
     border-radius: 30px;

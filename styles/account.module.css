@@ -8,6 +8,7 @@
     font-family: "Ubuntu", sans-serif;
     width: 100%;
     background-color: var(--main-background);
+    margin-top: 55px;
 }
 
 .darkRoot{
@@ -182,18 +183,18 @@
 }
 
 .navD > button{
+    text-transform: uppercase;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: fit-content;
     gap: 3px;
-    padding: 4px 6px;
+    padding: 5px 10px;
     background-color: white;
     border: 1px solid white;
-    border-radius: 10px;
-    box-shadow: 2px 2px 2px black;
-    font: 600;
+    border-radius: 2px;
 }
+
 .navD > button:hover{
     cursor: pointer;
 }
