@@ -65,7 +65,7 @@
 }
 
 .links > a:hover{
-    background-color: rgb(220, 63, 20);
+    background-color: #D80032;
 }
 
 @media (max-width: 600px) {

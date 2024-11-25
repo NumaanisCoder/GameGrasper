@@ -205,7 +205,7 @@ const Blog = (props) => {
         <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
 
         <h3 className={style.commentSecTitle}>Comment Section</h3>
-        <section className={style.commentSection}>
+        <section className={style.commentSection} id="comments">
           <div className={style.viewComments}>
             {AllComments && AllComments.map((data, index) => (
               <SingleComment data={data} key={index} />
@@ -234,8 +234,8 @@ const Blog = (props) => {
               <button
                 onClick={async (e) => {
                   if (!token) {
-                    localStorage.setItem("PreviousPath", urlpart);
-                    router.push("/accounts/signup");
+                    Cookies.set("BlogPreviousPath", urlpart+"#comments")
+                    router.push("/accounts/login");
                   }
 
                   if (Comment.message.length < 1) {

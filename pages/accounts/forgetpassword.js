@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import style from '@/styles/forgetpwdStyle.module.css';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import { useSnackbar } from 'notistack';
+
 
 const ForgetPassword = () => {
   const [submitLabel, setSubmitLabel] = useState("Send Link");
@@ -9,6 +11,7 @@ const ForgetPassword = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState(null);
   const router = useRouter();
+  const {enqueueSnackbar, closeSnackbar} = useSnackbar();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,6 +28,7 @@ const ForgetPassword = () => {
       const res = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/user/resetpassword`, { email });
       router.push('/accounts/login');
       setMessage("Link has been sent to your email.");
+      enqueueSnackbar("Link has been sent to your email!",{variant:"success"});
     } catch (error) {
      if(error.response.data.status == 400){
        setMessage("Email is Not registered !");

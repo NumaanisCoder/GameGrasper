@@ -21,32 +21,61 @@ import { useSelector } from "react-redux";
 const signup = () => {
   const {enqueueSnackbar, closeSnackbar} = useSnackbar();
   const isDarkMode = useSelector(state => state.theme.isDarkMode);
+  let previousPath = Cookies.get("BlogPreviousPath");
 
 
 
 
+  useEffect(() => {
+     previousPath = Cookies.get();
+    console.log("previousPath in useEffect:", previousPath);
+  }, []);
+  
 
   const router = useRouter();
   
-  const SignInWithGoogle = () =>{
+  const SignInWithGoogle = () => {
     const auth = getAuth();
-signInWithPopup(auth, provider)
-  .then(async (result) => {
+    signInWithPopup(auth, provider)
+      .then(async (result) => {
+        const user = result.user;
+        console.log("USER FROM GOOGLE ", user);
   
-    const user = result.user;
-      try {
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/GoogleAuth/Sign`, user);
-        console.log('API response:', response);
-        router.back();
-      } catch (error) {
-        console.error('API error:', error);
-      }
-    })
-    .catch((error) => {
-      console.error('Sign-in error:', error);
-    });
-router.back();
-  }
+        try {
+          // Replacing axios with fetch
+          const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/GoogleAuth/Sign`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+          });
+  
+          const data = await response.json(); // Parsing the response as JSON
+          
+          if (!response.ok) {
+            throw new Error('Failed to authenticate with Google');
+          }
+  
+          console.log('API response:', data);
+          
+          // Navigate after successful API response
+          if (previousPath) {
+            router.push(previousPath);  // Redirect to the previous path if available
+          } else {
+            router.push('/defaultPath');  // Fallback to a default path if previousPath is not found
+          }
+  
+        } catch (error) {
+          console.error('API error:', error);
+        }
+      })
+      .catch((error) => {
+        console.error('Sign-in error:', error);
+      });
+  };
+  
+  
 
   const firebaseConfig = {
     apiKey: "AIzaSyCYMZgFyW4i9VPapCOFxpjn-0Apjchf3Wg",

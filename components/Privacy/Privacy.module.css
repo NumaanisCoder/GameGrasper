@@ -26,13 +26,13 @@
 .PrivacyContainer > p{
     margin-left: 10px;
     color: rgb(165, 165, 165);
-    font-size: 18px;
+    font-size: clamp(.6rem, 0.8rem, 1rem);
 }
 
 
 .PrivacyContainer > h2{
     margin: 14px 2px 5px 0px;
-    font-size: 21px;
+    font-size: clamp(.6rem, 0.8rem, 1rem);
 }
 .head{
 font-size: 28px;
