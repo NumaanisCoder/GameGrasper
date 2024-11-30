@@ -53,10 +53,9 @@ const PopupForm = ({ onClose }) => {
   return (
     <div className={`${styles.popup} ${PoppinsFont.className}`}>
       <div className={styles.popupContent}>
-        <h3>Create Your Blog Website and Start Earning!</h3>
+        <h3>Create Your Own Website!</h3>
         <p>
-          Get a professional blog website at just<strong>$49</strong>  and start earning up
-          to $500 per month with AdSense!
+          Get a professional website at just <strong style={{color: 'rgb(40 177 37)'}}>$49</strong>
         </p>
         <form onSubmit={handleSubmit} className={styles.form}>
           <input
