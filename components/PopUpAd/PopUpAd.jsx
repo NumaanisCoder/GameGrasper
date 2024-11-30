@@ -55,7 +55,7 @@ const PopupForm = ({ onClose }) => {
       <div className={styles.popupContent}>
         <h3>Create Your Blog Website and Start Earning!</h3>
         <p>
-          Get a professional blog website at $79 and start earning up
+          Get a professional blog website at just<strong>$49</strong>  and start earning up
           to $500 per month with AdSense!
         </p>
         <form onSubmit={handleSubmit} className={styles.form}>
