@@ -3,18 +3,17 @@ import { useSnackbar } from "notistack"; // Import the notification system
 import styles from "./PopupForm.module.css";
 import { Poppins } from "next/font/google";
 
-
-const PoppinsFont = Poppins({weight: ['500','700'], subsets:['latin']});
+const PoppinsFont = Poppins({ weight: ["500", "700"], subsets: ["latin"] });
 
 const PopupForm = ({ onClose }) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [messageColor, setMessageColor] = useState("");
   const { enqueueSnackbar } = useSnackbar(); // Initialize the notification system
-  const [Button, setButton] = useState("Get Started")
+  const [buttonText, setButtonText] = useState("Get Started");
 
   const handleSubmit = async (event) => {
-    setButton("Sending..")
+    setButtonText("Submitting...");
     event.preventDefault();
     const formData = new FormData(event.target);
 
@@ -22,7 +21,7 @@ const PopupForm = ({ onClose }) => {
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
-    console.log(json)
+    console.log(json);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -31,13 +30,15 @@ const PopupForm = ({ onClose }) => {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: json
+        body: json,
       });
       const result = await response.json();
       if (result.success) {
-        setMessage("Thanks for contacting us! We'll be in touch shortly.");
+        setMessage(
+          "Thank you for applying! I have referred you at Outlier.ai. You'll be contacted soon."
+        );
         setMessageColor("green");
-        setButton("Get Started")
+        setButtonText("Get Started");
         enqueueSnackbar("Response Submitted!", { variant: "success" });
         setEmail(""); // Clear the email field after successful submission
       } else {
@@ -45,7 +46,7 @@ const PopupForm = ({ onClose }) => {
         setMessageColor("red");
       }
     } catch (error) {
-      setMessage("An error occurred. Please try again. Or Email to info@hawkflit.com");
+      setMessage("An error occurred. Please try again. Or email me at refer@outlier.ai");
       setMessageColor("red");
     }
   };
@@ -53,22 +54,25 @@ const PopupForm = ({ onClose }) => {
   return (
     <div className={`${styles.popup} ${PoppinsFont.className}`}>
       <div className={styles.popupContent}>
-        <h3>Create Your Own Website!</h3>
+        <h3>Work with Outlier.ai!</h3>
         <p>
-          Get a professional website at just <strong style={{color: 'rgb(40 177 37)'}}>$49</strong>
+          Earn up to <strong style={{ color: "rgb(40, 177, 37)" }}>$1000</strong> per week doing part-time work.
+        </p>
+        <p>
+          Get referred by me and start your journey at <strong>Outlier.ai</strong> today!
         </p>
         <form onSubmit={handleSubmit} className={styles.form}>
           <input
             type="email"
             name="email" // Ensure it matches the Web3Forms requirements
-            placeholder="Enter your email"
+            placeholder="Enter your valid email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
             className={styles.input}
           />
           <button type="submit" className={styles.submitBtn}>
-            {Button}
+            {buttonText}
           </button>
         </form>
         {message && (
