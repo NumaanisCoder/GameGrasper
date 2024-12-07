@@ -5,8 +5,10 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { headers } from '@/next.config';
+import AdminLayout from '@/layouts/AdminLayout';
 
-export default function App() {
+
+const CreateBlogPage = () => {
   const editorRef = useRef(null);
   const router = useRouter();
 
@@ -172,3 +174,9 @@ export default function App() {
     </div>
   );
 }
+
+
+// Assign layout
+CreateBlogPage.getLayout = (page) => <AdminLayout>{page}</AdminLayout>;
+
+export default CreateBlogPage;

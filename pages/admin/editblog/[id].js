@@ -5,8 +5,9 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { headers } from '@/next.config';
+import AdminLayout from '@/layouts/AdminLayout';
 
-export default function App(props) {
+const App = (props)=> {
   const editorRef = useRef(null);
   const router = useRouter();
   let formData = new FormData();
@@ -168,6 +169,12 @@ export default function App(props) {
     </div>
   );
 }
+
+
+App.getLayout = (page) => <AdminLayout>{page}</AdminLayout>;
+
+export default App;
+
 
 
 export async function getServerSideProps(context) {

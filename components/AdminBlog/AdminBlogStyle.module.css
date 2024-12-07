@@ -1,5 +1,8 @@
 .root{
-    padding: 10px;
+    padding: 20px;
+    color: white;
+    border: none;
+    background-color: #03012C;
 }
 
 .actionButtonContainer{
@@ -10,36 +13,33 @@
 
 .deleteButton{
     border: 2px solid red;
-    background-color: white;
-    color: red;
+    background-color: red;
+    color: white;
     padding: 6px;
-    font-weight: 600;
+   
     border-radius: 6px;
 }
 
 .viewButton{
     border: 2px solid blue;
-    background-color: white;
-    color: blue;
+background-color: blue;
+    color: white;
     padding: 6px;
-    font-weight: 600;
+    
     border-radius: 6px;
 }
 .editButton{
     border: 2px solid green;
-    background-color: white;
-    color: green;
+    background-color: green;
+    color: white;
     padding: 6px;
-    font-weight: 600;
+   
     border-radius: 6px;
 }
 
 .editButton:hover, .viewButton:hover, .deleteButton:hover{
-    filter: invert();
+    filter: brightness(0.8);
     cursor: pointer;
-    transition: all 400ms linear;
+    transition: all 100ms linear;
 }
 
-.summary{
-    font-size: larger;
-}

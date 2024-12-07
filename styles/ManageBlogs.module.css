@@ -1,0 +1,48 @@
+.root{
+    min-width: 250px;
+    background-color: black;
+    height: calc(100vh - 90px); /* Full height of the viewport */
+    position: sticky; /* Sticks to the viewport on scroll */
+    top: 0; /* Ensures sticky behavior starts from the top */
+    border-right: 2px solid #f2f2f2;
+    font-family: 'Poppins', sans-serif;
+    display: flex; /* Ensures the child elements (e.g., .linkContainer) use flex layout */
+    flex-direction: column;
+    overflow-y: auto; /* Enables scrolling if the content overflows */
+
+    padding: 20px 30px;
+}
+.sortContainer{
+    width: 100%;
+    max-width: 80rem;
+    margin-top: 10px;
+    padding: 10px 3px;
+    display: flex;
+    align-items: center;
+}
+
+.inputSearch{
+    width: 40%;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    background: #f2f2f2;
+}
+
+.sortSelect{
+    border: none;
+    outline: none;
+    background-color: #373F51;
+    color: white;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+
+.blogsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

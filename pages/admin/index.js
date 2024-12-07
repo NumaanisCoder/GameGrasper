@@ -1,58 +1,34 @@
-import React, { useEffect, useState } from 'react'
-import style from '@/styles/Auth.module.css'
-import { useRouter } from 'next/router'
-import Cookies from 'js-cookie';
-
-const root2103Nn = () => {
+import MyChart from "@/components/MyChart";
+import AdminLayout from "@/layouts/AdminLayout";
+import style from '@/styles/AdminDashBoard.module.css'
 
 
-  const [password, setPassword] = useState("");
-  const router = useRouter();
 
-  useEffect(() => {
-    if(Cookies.get("tokenofrelaxbyte")){
-        if(Cookies.get("tokenofrelaxbyte") == process.env.NEXT_PUBLIC_ADMIN_TOKEN){
-            router.push("/admin/root");
-        }
-    }else{
-        router.push("/admin");
-    }
-    
-  }, [])
-  
 
-  return (
-    <div className={style.root}>
+const AdminDashboard = (props) => {
+  return <div className={style.root}>
 
-    {/* Login Form */}
-      <div className={style.auth}>
-            <h3>Welcome Back Admin</h3>
-            <div className={style.formGroup}>
-              <label htmlFor="password">Password</label>
-              <input type="password" name="" id="password" onChange={(e)=>{
-                setPassword(e.target.value)
-              }} />
-            </div>
-            <div className={style.formGroup}>
-                  <button onClick={(e)=>{
-                    if( password === process.env.NEXT_PUBLIC_ADMIN_PASSWORD){
-                        Cookies.set("tokenofrelaxbyte",process.env.NEXT_PUBLIC_ADMIN_TOKEN,{expires : 365});
-                        router.push("/admin/root")
-                    }else{
-                      console.log(process.env.NEXT_PUBLIC_ADMIN_TOKEN);
-                      console.log(password);
-                        e.target.innerText = "Wrong Password";
-                        setTimeout(() => {
-                          e.target.innerText = "Login";
-                        }, 1000);
-                    }
-                   
-                  }}>Login</button>
-            </div>
-      </div>
-      
+    <div className={style.topBlogsContainer}>
+<MyChart blogs={props.data.topBlogs} label={"Top Blogs"} color={"#EC058E"}/>
+<MyChart blogs={props.data.trending} type="bar" label={"Trending Blogs"} color={"#fa0000"}/>
+
     </div>
-  )
+
+
+  </div>;
+};
+
+// Assign layout
+AdminDashboard.getLayout = (page) => <AdminLayout>{page}</AdminLayout>;
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/blog`);
+  const data = await res.json();
+
+  // Pass data to the page via props
+  return { props: { data } };
 }
 
-export default root2103Nn
+
+export default AdminDashboard;

@@ -2,6 +2,9 @@ import React from "react";
 import style from "./AdminBlogStyle.module.css";
 import { useRouter } from 'next/router';
 import Link from "next/link";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({weight:['500'], subsets:['latin']});
 
 const AdminBlog = ({ data }) => {
   const router = useRouter();
@@ -11,9 +14,9 @@ const AdminBlog = ({ data }) => {
   };
 
   return (
-    <div className={style.root}>
-      <details>
-        <summary className={style.summary}>{data.title} | <b>{data.views}</b></summary>
+
+      <details className={`${style.root} ${poppins.className}`}>
+        <summary className={`${style.summary} ${poppins.className}`}>{data.title} | <b>{data.views}</b></summary>
         <div className={style.actionButtonContainer}>
         <button
   className={style.deleteButton}
@@ -51,7 +54,7 @@ const AdminBlog = ({ data }) => {
           }>Edit</Link>
         </div>
       </details>
-    </div>
+
   );
 };
 

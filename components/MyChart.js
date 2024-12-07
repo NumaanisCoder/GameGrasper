@@ -1,24 +1,41 @@
 // components/MyChart.js
-import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement } from 'chart.js';
+import { Line, Bar } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  Title,
+  Tooltip,
+  Legend,
+  LineElement,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+} from 'chart.js';
 
 // Register Chart.js components
-ChartJS.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement);
+ChartJS.register(
+  Title,
+  Tooltip,
+  Legend,
+  LineElement,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  PointElement
+);
 
-const MyChart = ({ blogs }) => {
-  // Sort blogs by views and select top 7
-
+const MyChart = ({ blogs, label, color, type = 'line' }) => {
   // Prepare data for the chart
   const chartData = {
-    labels: blogs.map(blog => blog.title.substring(0,14)),
+    labels: blogs.map(blog => blog.title.substring(0, 14)),
     datasets: [
       {
-        label: 'Views',
+        label: label,
         data: blogs.map(blog => blog.views),
-        borderColor: '#eb0707',
-        backgroundColor: '#eb0707',
-        fill: true, // Fill the area under the line
-        tension: 0.1, // Smooth the line
+        borderColor: color,
+        backgroundColor: color,
+        fill: type === 'line', // Fill area only for line chart
+        tension: type === 'line' ? 0.1 : 0, // Smooth line for line chart
       },
     ],
   };
@@ -40,15 +57,33 @@ const MyChart = ({ blogs }) => {
     },
     scales: {
       x: {
+        ticks: {
+          color: '#ffffff', // X-axis label color
+          font: {
+            size: 10,       // Font size for X-axis labels
+            weight: 'bold', // Font weight for X-axis labels
+          }},
         beginAtZero: true,
       },
       y: {
+        ticks: {
+          color: '#ffffff', // Y-axis label color
+          font: {
+            size: 12,       // Font size for Y-axis labels
+            weight: 'bold', // Font weight for Y-axis labels
+          }},
         beginAtZero: true,
       },
     },
   };
 
-  return <Line data={chartData} options={options} />;
+  // Render the appropriate chart type
+  return (
+    <>
+      {type === 'line' && <Line data={chartData} options={options} />}
+      {type === 'bar' && <Bar data={chartData} options={options} />}
+    </>
+  );
 };
 
 export default MyChart;
