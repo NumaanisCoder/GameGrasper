@@ -90,7 +90,7 @@ export default function App({ Component, pageProps }) {
             }}
           />
         </Head>
-        <NextTopLoader color="red" showSpinner={false} />
+        <NextTopLoader color="red" showSpinner={false} zIndex={99999} />
         {getLayout(<Component {...pageProps} />)}
         <CookieConsentComponent />
       </SnackbarProvider>

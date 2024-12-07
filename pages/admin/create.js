@@ -145,13 +145,14 @@ const CreateBlogPage = () => {
               name="summary"
               cols="30"
               rows="3"
+              style={{padding: 6}}
               value={formValues.summary}
               onChange={handleChange}
               required
             ></textarea>
           </div>
 
-          <div className={`${styles.formGroup} ${isDarkMode ? style.darkFG : ""}`}>
+          <div className={`${styles.formGroup} ${isDarkMode ? styles.darkFG : ""}`}>
             <label className={styles.formLabel} htmlFor="tags">
               Tags (comma separated)
             </label>
