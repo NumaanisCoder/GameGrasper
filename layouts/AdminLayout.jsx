@@ -1,5 +1,5 @@
-import NavBar from "@/Components/NavBar/NavBar";
-import SideMenu from "@/Components/SideMenu/SideMenu";
+import NavBar from "@/components/NavBar/NavBar";
+import SideMenu from "@/components/SideMenu/SideMenu";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
