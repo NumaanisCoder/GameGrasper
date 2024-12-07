@@ -14,7 +14,7 @@ const AdminLayout = ({ children }) => {
     if (token) {
       if (token !== process.env.NEXT_PUBLIC_ADMIN_TOKEN) {
         router.push("/admin/login");  // redirect if token doesn't match
-      } else {
+      } else { 
         setIsLoading(false); // token is valid, so stop the loading state
       }
     } else {
