@@ -10,7 +10,7 @@ const PopupForm = ({ onClose }) => {
   const [message, setMessage] = useState("");
   const [messageColor, setMessageColor] = useState("");
   const { enqueueSnackbar } = useSnackbar(); // Initialize the notification system
-  const [buttonText, setButtonText] = useState("Get Started");
+  const [buttonText, setButtonText] = useState("Inquire Now");
 
   const handleSubmit = async (event) => {
     setButtonText("Submitting...");
@@ -34,19 +34,17 @@ const PopupForm = ({ onClose }) => {
       });
       const result = await response.json();
       if (result.success) {
-        setMessage(
-          "Thank you for applying! I have referred you at Outlier.ai. You'll be contacted soon."
-        );
+        setMessage("Thank you for your inquiry! I will get back to you soon.");
         setMessageColor("green");
-        setButtonText("Get Started");
-        enqueueSnackbar("Response Submitted!", { variant: "success" });
+        setButtonText("Inquire Now");
+        enqueueSnackbar("Inquiry Submitted!", { variant: "success" });
         setEmail(""); // Clear the email field after successful submission
       } else {
-        setMessage("Failed to submit form. Please try again.");
+        setMessage("Failed to submit your inquiry. Please try again.");
         setMessageColor("red");
       }
     } catch (error) {
-      setMessage("An error occurred. Please try again. Or email me at refer@outlier.ai");
+      setMessage("An error occurred. Please try again or email me at owner@goalxpert.blog");
       setMessageColor("red");
     }
   };
@@ -54,12 +52,18 @@ const PopupForm = ({ onClose }) => {
   return (
     <div className={`${styles.popup} ${PoppinsFont.className}`}>
       <div className={styles.popupContent}>
-        <h3>Work with Outlier.ai!</h3>
+        <h3>Own GoalXpert.blog Today for <strong style={{color:'green'}}>$49!</strong></h3>
         <p>
-          Earn up to <strong style={{ color: "rgb(40, 177, 37)" }}>$1000</strong> per week doing part-time work.
+          Looking for a niche-specific domain with <strong>AdSense approval</strong>? 
+          <strong><a href="https://www.goalxpert.blog" target="_blank">GoalXpert.blog</a></strong> is up for sale! 🚀
         </p>
         <p>
-          Get referred by me and start your journey at <strong>Outlier.ai</strong> today!
+          This domain is a perfect opportunity for bloggers or entrepreneurs 
+          looking to establish a blog with <strong>AdSense already approved</strong>. 
+          While it currently has low traffic (as I am not working on it), the potential is immense.
+        </p>
+        <p style={{ fontStyle: "italic" }}>
+          Start your blogging journey or expand your portfolio with this premium asset.
         </p>
         <form onSubmit={handleSubmit} className={styles.form}>
           <input
