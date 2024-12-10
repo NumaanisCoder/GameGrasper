@@ -57,8 +57,9 @@
   padding: 10px;
   width: 100%;
   /* text-shadow: 4px 3px 4px black; */
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: linear-gradient(0deg, #181818, #181818 60%, rgba(0, 0, 0, 0.282));
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 
