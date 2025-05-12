@@ -2,11 +2,9 @@
 .parent {
     height: 60px;
     width: 100%;
-    color: black;
+    color: white;
     position: fixed;
-    background: rgba(255, 255, 255, .8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: #050517;
     top: 0;
     z-index: 99;
     display: flex;
@@ -18,13 +16,12 @@
 .Logo {
     color: red;
     -webkit-text-stroke-color: black;
-    font-family: 'AvengersFont';
     font-size: 30px;
   
 }
 
 .Logo span {
-    color: black;
+    color: white;
 }
 
 /* Nav Links */
@@ -43,19 +40,30 @@
 }
 
 .navLi > a {
-    color: black;
+    color: white;
     border-radius: 6px;
     font-size: 18px;
-    padding: 7px 13px;
+    padding: 7px 0px;
     text-transform: uppercase;
     transition: color 0.3s ease;
+    position: relative;
+}
+.navLi > a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Adjust the gap between text and border */
+  width: 100%;
+  height: 2px; /* Adjust the thickness of the border */
+  background-color: red;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 
-.navLi > a:hover {
-    color: black;
-    text-decoration: underline;
-    text-decoration-color: black;
+.navLi > a:hover::before {
+   transform: scaleX(1);
 }
 
 
@@ -107,7 +115,7 @@
 
 /* Hamburger Icon */
 .checkbtn {
-    color: black;
+    color: white;
     font-size: 30px;
     cursor: pointer;
     display: none; /* Hidden by default on desktop */
@@ -124,6 +132,7 @@
         font-size: 30px;
     }
     .navLi > a {
+        color: white;
         font-size: 16px;
     }
 }
@@ -156,6 +165,7 @@
     }
 
     .navLi > a {
+        color: black;
         font-size: 20px;
     }
 

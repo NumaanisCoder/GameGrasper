@@ -16,23 +16,22 @@ display: flex;
 
 }
 
-
 .searchInput{
     margin-top: 100px;
     width: 50rem;
     background-color: transparent;
     border: none;
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid black;
     padding: 15px 25px;
-    outline: 0;
-    color: white;
+    outline: 2px solid black;
+    color: black;
     font-size: 18px;
-    caret-color: red;
+    caret-color: black;
     height: 50px;
-    box-shadow: 2px 2px 4px red;
+
 }
 .searchInput::placeholder{
-    color: #f2f2f2;
+    color: gray;
 }
 .darkSearchInput{
     background-color: black;

@@ -63,7 +63,7 @@
     margin-bottom: 50px;
     margin-top: 60px;
     width: 70rem;
-    color: white;
+    color: #0F110C;
     background-color: var(--main-background);
 }
 .parent.darkp{
@@ -129,7 +129,7 @@
 
 .author,
 .category {
-    color: #f2f2f2;
+    color: black;
 }
 .darkAuthor{
     color: rgb(231, 231, 231);
@@ -175,13 +175,13 @@
 .content h2{
     font-family: 'TitleFont';
    width: fit-content;
-   color: white;
+   color: #0F110C;
    font-size: 36px;
    line-height: 30px;
   
 }
 .content h3{
-    color: #e3e3e3;
+    color: #0F110C;
     font-family: 'TitleFont';
    font-size:26px;
    line-height: 28px;
@@ -192,7 +192,7 @@
    border-radius: 10px;
 }
 .content a{
-    color: rgb(0, 166, 255);
+    color: blue;
     text-decoration: underline;
 }
 .content em{
@@ -243,7 +243,7 @@
     text-decoration: underline;
     text-decoration-color: red;
     line-height: 10px;
-    color: white;
+    color: black;
 }
 .sphead.darkSpHead{
    color: white;
@@ -263,7 +263,7 @@
     font-family: 'TitleFont'; /* Choose a name for your custom font */
     font-size: 30px;
     text-decoration: underline;
-    text-decoration-color: red;
+    text-decoration-color: #0F110C;
 }
 
 .viewComments{
@@ -296,10 +296,10 @@
     border-radius: 6px;
     width: 70%;
     max-width: 400px;
-    color: white;
+    color: black;
     background-color: #f2f2f2;
-    box-shadow: 1px 1px 2px #FF312E;
-    border: 1px solid #FF312E;
+    box-shadow: 1px 1px 2px #0F110C;
+    border: 1px solid #0F110C;
 }
 .commentTextArea.DcommentTextArea{
     background-color: black;
@@ -319,7 +319,7 @@
     font-size: 16px;
     border: none;
     border-radius: 6px;
-    background-color: #FF312E ;
+    background-color: #0F110C ;
     color: white;
     font-weight: bolder;
     text-transform: uppercase;

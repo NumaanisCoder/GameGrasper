@@ -41,6 +41,7 @@
   border-radius: 12px;
   aspect-ratio: 16/9;
   object-fit: contain;
+  box-shadow: 1px 1px 2px gray; 
 }
 
 
@@ -75,7 +76,7 @@
   gap: 10px;
   align-items: center;
   padding: 15px 10px;
-  background-color: var(--main-cardbackground);
+  /* background-color: var(--main-cardbackground); */
   height: max-content;
   border-radius: 6px;
 
@@ -90,7 +91,7 @@
   text-transform: uppercase;
   font-family: 'TitleFont';
   text-decoration: underline;
-  color: white;
+  color: black;
   text-decoration-color: red; 
   
 }
@@ -99,8 +100,8 @@
   padding: 20px 15px;
   display: flex;
   justify-content: space-between;
-  background-color: var(--main-cardbackground);
-  color: white;
+  /* background-color: var(--main-cardbackground); */
+  color: black;
  border-bottom: 2px solid gray;
  
 }
@@ -135,7 +136,7 @@ object-fit: contain;
   font-weight: 400;
   margin-bottom: 10px;
   text-decoration: underline;
-  color: white;
+  color: #0F110C;
   text-decoration-color: red; 
 }
 
@@ -172,16 +173,17 @@ object-fit: contain;
 }
 .vlbctitle{
   z-index: 2;
-  font-family: 'TitleFont';
-  font-size: 30px;
+  font-size: 18px;
   line-height: 28px;
   position: absolute;
   bottom: 0;
   font-weight: 800;
   color: white;
   padding: 10px;
-  width: 90%;
-  text-shadow: 4px 3px 4px black;
+  width: 100%;
+  background-color: black;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 .RestBlogParent{
@@ -197,7 +199,7 @@ object-fit: contain;
   margin-bottom: 10px;
   text-decoration: underline;
   text-decoration-color: red; 
-  color: white;
+color: #0F110C;
 }
 
 .RestBlogContainer{

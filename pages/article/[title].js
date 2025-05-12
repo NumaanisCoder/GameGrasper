@@ -27,18 +27,10 @@ const FollowUs = dynamic(() => import("@/components/FollowUs"));
 const Open_Sans_Font = Open_Sans({ subsets: ['latin'] })
 
 const Blog = (props) => {
-  const [isPopupVisible, setIsPopupVisible] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
   const token = Cookies.get('token');
   const router = useRouter();
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsPopupVisible(true);
-    }, 8000); // 5 seconds delay
-
-    return () => clearTimeout(timer); // Cleanup the timer
-  }, []);
 
   const {
     _id,
@@ -175,16 +167,14 @@ const Blog = (props) => {
   quality={80}
   loading="lazy"
 />
-{isPopupVisible && (
-        <PopupForm onClose={() => setIsPopupVisible(false)} />
-      )}
+
 
         <div className={style.socialMediaContainer}>
           <FaShare width={30} />
           <SocialShare url={`https://www.gamegrasper.blog${urlpart}`} title={title} />
         </div>
 
-        <AdBanner data-ad-slot="5158369704" data-ad-format="auto" data-full-width-responsive="true" />
+
         
 
         <p

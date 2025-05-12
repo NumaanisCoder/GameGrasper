@@ -7,6 +7,9 @@ import { useSelector } from 'react-redux';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 import ThemeButton from '../ToggelTheme/ThemeButton';
+import {Rubik_Dirt, Spicy_Rice} from 'next/font/google'
+
+const LogoFont = Spicy_Rice({subsets:['latin'], weight:['400']})
 
 
 
@@ -49,7 +52,7 @@ const NavBar = () => {
         <FontAwesomeIcon icon={isChecked ? faTimes : faBars} />
       </label>
       <label>
-        <Link className={`${style.Logo} ${style.protestStrikeRegular} ${isDarkMode ? style.darkLogo : ''}`} href="/" onClick={menuProvider}>
+        <Link className={`${style.Logo} ${style.protestStrikeRegular} ${isDarkMode ? style.darkLogo : ''} ${LogoFont.className}`} href="/" onClick={menuProvider}>
           Game<span>Grasper</span>
         </Link>
       </label>

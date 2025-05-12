@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
 @font-face {
   font-family: 'blogfont'; /* Choose a name for your custom font */
   src: url('../JosefinSans-VariableFont_wght.ttf') format('woff'), /* Add each format of your font */
@@ -43,8 +43,8 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
-  --main-background: #2B2D42;
-  --main-cardbackground: #232537;
+  --main-background: #F0EFF4;
+  --main-cardbackground: #0F110C;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
