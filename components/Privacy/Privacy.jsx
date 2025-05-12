@@ -12,7 +12,7 @@ const Privacy = () => {
         <p>Effective Date: 11/09/2023</p>
 
         <p>
-          <b>GameGrasper</b> ("us", "we", or "our") operates https://www.GameGrasper.blog
+          <b>GameGrasper</b> ("us", "we", or "our") operates https://www.GameGrasper.online
           (the "Site"). This page informs you of our policies regarding the
           collection, use, and disclosure of Personal Information we receive
           from users of the Site.

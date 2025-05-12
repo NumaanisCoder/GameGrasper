@@ -196,12 +196,12 @@ const signup = () => {
       </form>
 
       <div className={style.navD}>
-      <button onClick={SignInWithGoogle}>
-        <img src="/google.png" alt="" />
-        SignIn With Google
-        </button>
+        <button onClick={SignInWithGoogle}>
+            <img src="/google.png" alt="" />
+            SignIn With Google
+            </button>
         <Link href={'/accounts/signup'}>
-              Create New Account
+            Create New Account
         </Link>
       </div>
     </div>
