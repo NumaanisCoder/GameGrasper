@@ -168,9 +168,15 @@
 .content > p{
     margin-bottom: 15px;
 }
-.content li{
-    line-height: 27px;
-    font-size: 18px;
+.content ul {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.content li {
+  padding-left: 1em;
+  text-indent: -1em;
+  margin-bottom: 0.5em;
 }
 .content h2{
     font-family: 'TitleFont';
@@ -200,7 +206,7 @@
 }
 
 .content li strong{
-    color: #F40000;
+    color: black;
 }
 .darkContent h2{
     color: white;
@@ -392,10 +398,6 @@
         line-height: 1.625rem;
         padding: 3px 10px 5px 2px;
         margin-left: 25px;
-    }
-    .content li{
-        line-height: 25px;
-        font-size: 17px;
     }
 
     .title {
