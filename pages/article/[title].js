@@ -130,14 +130,14 @@ const Blog = (props) => {
               "name": "GameGrasper",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.gamegrasper.blog/GameGrasperLogo.png"
+                "url": "https://www.gamegrasper.online/GameGrasperLogo.png"
               }
             },
             "datePublished": createdAt,
             "description": summary,
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": `https://www.gamegrasper.com${getURL(title)}`
+              "@id": `https://www.gamegrasper.online${getURL(title)}`
             }
           })
         }} />
@@ -171,7 +171,7 @@ const Blog = (props) => {
 
         <div className={style.socialMediaContainer}>
           <FaShare width={30} />
-          <SocialShare url={`https://www.gamegrasper.blog${urlpart}`} title={title} />
+          <SocialShare url={`https://www.gamegrasper.online${urlpart}`} title={title} />
         </div>
 
 
