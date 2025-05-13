@@ -163,8 +163,7 @@ p img{
 
 
 li::marker{
-  content: "→ ";
- color: rgb(61, 61, 61);
+ color: black;
 }
 ol{
   list-style-position: inside;
