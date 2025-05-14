@@ -250,10 +250,9 @@
     text-decoration-color: red;
     line-height: 10px;
     color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-.sphead.darkSpHead{
-   color: white;
-}
+
 
 
 

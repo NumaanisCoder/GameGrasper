@@ -93,6 +93,7 @@
   text-decoration: underline;
   color: black;
   text-decoration-color: red; 
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   
 }
 .blogCard{
@@ -138,6 +139,7 @@ object-fit: contain;
   text-decoration: underline;
   color: #0F110C;
   text-decoration-color: red; 
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .mostViewBlogContainer{
@@ -200,6 +202,7 @@ object-fit: contain;
   text-decoration: underline;
   text-decoration-color: red; 
 color: #0F110C;
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .RestBlogContainer{
