@@ -18,7 +18,7 @@ const Index = (props) => {
   function getURL(blog){
     const encrypturl = blog.title.replace(/-/g, '~');
     const questionmark = encrypturl.replace(/\?/g, '$');
-    const urlpart = `/article/${questionmark.replace(/ /g, '-')}`;
+    const urlpart = `/blog/${questionmark.replace(/ /g, '-')}`;
     return urlpart;
   }
 
