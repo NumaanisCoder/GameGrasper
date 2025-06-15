@@ -58,7 +58,7 @@ const Blog = (props) => {
 
   const encrypturl = title.replace(/-/g, '~');
   const questionmark = encrypturl.replace(/\?/g, '$');
-  const urlpart = `/article/${questionmark.replace(/ /g, '-')}`;
+  const urlpart = `/blog/${questionmark.replace(/ /g, '-')}`;
 
   useEffect(() => {
     const handleResize = () => {
@@ -97,7 +97,7 @@ const Blog = (props) => {
   function getURL(){
     const encrypturl = title.replace(/-/g, '~');
     const questionmark = encrypturl.replace(/\?/g, '$');
-    const urlpart = `/article/${questionmark.replace(/ /g, '-')}`;
+    const urlpart = `/blog/${questionmark.replace(/ /g, '-')}`;
     return urlpart;
   }
 
@@ -113,12 +113,12 @@ const Blog = (props) => {
   <meta property="og:description" content={summary} />
   <meta property="og:image" content={image} />
   <meta property="og:image:alt" content={title} />
-  <meta name="twitter:title" content={`${title} - Exclusive Article`} />
+  <meta name="twitter:title" content={`${title} - Exclusive `} />
   <meta name="twitter:description" content={summary} />
   <script type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Article",
+            "@type": "",
             "headline": title,
             "image": image,
             "author": {

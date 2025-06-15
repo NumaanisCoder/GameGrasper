@@ -22,7 +22,7 @@ const BlogCard = ({ data }) => {
 
   const encrypturl = title.replace(/-/g, '~');
 const questionmark = encrypturl.replace(/\?/g, '$');
-const urlpart = `/article/${questionmark.replace(/ /g, '-')}`;
+const urlpart = `/blog/${questionmark.replace(/ /g, '-')}`;
 
   
 

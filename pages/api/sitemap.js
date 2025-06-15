@@ -15,7 +15,7 @@ export default ConnectDb(async (req, res) => {
     const currentDate = new Date().toISOString();
     const baseUrl = 'https://www.gamegrasper.online';
     const urls = blogs.map(blog => ({
-      loc: `${baseUrl}/article/${encodeURIComponent(blog.title.replace(/ /g, '-'))}`,
+      loc: `${baseUrl}/blog/${encodeURIComponent(blog.title.replace(/ /g, '-'))}`,
       lastmod: currentDate,
       priority: 0.80,
     }));
